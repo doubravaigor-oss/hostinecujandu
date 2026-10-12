@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
-import { kontakt, nabidkaOslav, proFirmy, usporadaneAkce } from "@/data/hostinec";
+import { kontakt, nabidkaOslav, pronajemProstor, proFirmy, usporadaneAkce } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 import { obsahQuery, fotkyObsah } from "@/lib/obsah.functions";
 
@@ -77,6 +77,28 @@ function Oslavy() {
         <div className="mt-3 text-center">
           <a href={kontakt.telefonOdkaz} className="retro-btn-big">
             ☎ Poptat firemní akci – {kontakt.telefon}
+          </a>
+        </div>
+      </Box>
+      <Box title="★ Pronájem prostor pro soukromé akce ★">
+        <p className="font-bold">
+          U nás si můžete pronajmout prostor na vlastní soukromou akci – ať už si pohoštění
+          zajistíte sami, nebo ho necháte na nás.
+        </p>
+        <ul className="frame my-3 border-2 border-border bg-beer/20 p-2 pl-6 list-disc">
+          {pronajemProstor.map((t) => (
+            <li key={t} className="py-0.5 font-bold">
+              {t}
+            </li>
+          ))}
+        </ul>
+        <p className="border-2 border-dashed border-title p-2">
+          <b>Nabídka je vždy individuální</b> – podle toho, kdo, kolik a na jak dlouho přijde.
+          Zavolejte nám nebo napište na Facebook a domluvíme všechny podrobnosti.
+        </p>
+        <div className="mt-3 text-center">
+          <a href={kontakt.telefonOdkaz} className="retro-btn-big">
+            ☎ Poptat pronájem prostor – {kontakt.telefon}
           </a>
         </div>
       </Box>
