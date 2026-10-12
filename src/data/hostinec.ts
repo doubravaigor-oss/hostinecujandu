@@ -45,8 +45,27 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
     ],
   },
   { kategorie: "Víkendové speciality", polozky: [] },
-  { kategorie: "Čepované pivo", polozky: [] },
-  { kategorie: "Nealko a ostatní nápoje", polozky: [] },
+  {
+    kategorie: "Čepované pivo",
+    polozky: [
+      { nazev: "Radegast 10°", cena: "41 Kč" },
+      { nazev: "Plzeň 12°", cena: "54 Kč" },
+    ],
+  },
+  {
+    kategorie: "Nealko a ostatní nápoje",
+    polozky: [
+      { nazev: "Espresso", cena: "40 Kč" },
+      { nazev: "Turecká káva", cena: "26 Kč" },
+      { nazev: "Coca-Cola 0,3 l", cena: "35 Kč" },
+      { nazev: "Džus 0,3 l", cena: "39 Kč" },
+      { nazev: "Víno 0,2 l", cena: "45 Kč" },
+      { nazev: "Prosecco 0,2 l", cena: "60 Kč" },
+      { nazev: "Minerálka Ilsano 0,5 l", cena: "30 Kč" },
+      { nazev: "Matcha Johannes", cena: "54 Kč" },
+      { nazev: "Birell", cena: "40 Kč" },
+    ],
+  },
 ];
 
 // Benefit kuchyně (zadáno majitelem – na webu jako hlavní přednost)
