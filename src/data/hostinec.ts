@@ -219,3 +219,11 @@ export const hodnoceniText = {
   mapa: "➜ Ukázat na mapě",
   poznamka: "Hodnocení se odesílá z vašeho účtu Google. Děkujeme a těšíme se na viděnou!",
 };
+
+export const hraText = {
+  nadpis: "Cihličky – hostinecká herna",
+  pripravena: "CIHLIČKY",
+  pauza: "PAUZA",
+  vyhra: "Všechny cihličky dole. Na zdraví!",
+  konec: "Míček utekl. Odveta?",
+};

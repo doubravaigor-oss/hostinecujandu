@@ -8,6 +8,10 @@ export const Route = createFileRoute("/auth")({
     meta: [
       { title: "Přihlášení správy – Hostinec U Jandů" },
       { name: "description", content: "Přihlášení pro správu obsahu webu Hostince U Jandů." },
+      { property: "og:title", content: "Přihlášení správy – Hostinec U Jandů" },
+      { property: "og:description", content: "Přihlášení pro správu obsahu webu Hostince U Jandů." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { name: "robots", content: "noindex" },
     ],
   }),

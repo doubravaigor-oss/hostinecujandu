@@ -24,13 +24,10 @@ function Jidlo() {
         <div className="font-bold text-base underline">{texty.kuchyne_nadpis}</div>
         <div className="text-xs mt-1">{texty.kuchyne_text}</div>
       </div>
-      {kategorie.map((k) => (
+      {kategorie.filter((k) => k.polozky.length > 0).map((k) => (
         <div key={k.id} className="mb-3">
           <h3 className="text-lg underline">{k.nazev}</h3>
-          {k.polozky.length === 0 ? (
-            <p className="text-muted-foreground italic">Nabídku brzy doplníme.</p>
-          ) : (
-            <table className="w-full">
+          <table className="w-full">
               <tbody>
                 {k.polozky.map((p) => (
                   <tr key={p.id} className="border-b border-dotted border-border">
@@ -42,8 +39,7 @@ function Jidlo() {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          )}
+          </table>
         </div>
       ))}
     </Box>

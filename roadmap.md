@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [x] Prázdná zkušební nabídka odstraněna z veřejného webu; samostatná hra Cihličky v menu, odpalování, skóre, pauza a nová hra ověřeny.
+
 - [x] Opravit rozbitý styl (chyba v CSS) – opraveno a ověřeno 12. 10. 2026
 - [x] Retro prvky: pásek „ještě se buduje", plakety v patičce, údaj „Web naposledy doplněn" (doplněno 12. 10. 2026)
 
