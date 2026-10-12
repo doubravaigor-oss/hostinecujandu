@@ -21,7 +21,7 @@ function Jidlo() {
               <tbody>
                 {k.polozky.map((p) => (
                   <tr key={p.nazev} className="border-b border-dotted border-border">
-                    <td className="py-0.5">{p.nazev}</td>
+                    <td className="py-0.5">{p.nazev}{p.popis && <div className="text-xs italic opacity-80">{p.popis}</div>}</td>
                     <td className="text-right font-bold whitespace-nowrap">{p.cena}</td>
                   </tr>
                 ))}
