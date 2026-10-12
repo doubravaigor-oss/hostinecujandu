@@ -25,6 +25,9 @@ export const kontakt = {
   facebook: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
   mapaOdkaz: "https://www.google.com/maps/search/?api=1&query=N%C3%A1m%C4%9Bst%C3%AD+Prokopa+Chocholou%C5%A1ka+18%2C+Nad%C4%9Bjkov",
   mapaVlozena: "https://www.google.com/maps?q=N%C3%A1m%C4%9Bst%C3%AD%20Prokopa%20Chocholou%C5%A1ka%2018%2C%20Nad%C4%9Bjkov&z=17&output=embed",
+  // Odkaz na napsání hodnocení na Mapách Google (QR kód v sekci Kontakt)
+  hodnoceni: "https://search.google.com/local/writereview?placeid=ChIJ38GQeexhC0cR2YeFSGEPXLo",
+  hodnoceniMisto: "https://www.google.com/maps/place/?q=place_id:ChIJ38GQeexhC0cR2YeFSGEPXLo",
 };
 
 export const oteviraciDoba: { den: string; cas: string }[] = [

@@ -8,12 +8,18 @@ const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec
 
 const SYMBOLY = ["UTOPENEC", "HERMELÍN", "PIVO", "ŠIPKA", "TOUST"];
 const rnd = () => SYMBOLY[Math.floor(Math.random() * SYMBOLY.length)] ?? "PIVO";
-const novyValec = () => [rnd(), rnd(), rnd()];
+// výchozí válce jsou pevně dané – stránka se pak na serveru i v prohlížeči
+// vykreslí úplně stejně (náhoda přichází až na kliknutí pákou)
+const VYCHOZI_VALCE = [
+  ["UTOPENEC", "HERMELÍN", "PIVO"],
+  ["ŠIPKA", "TOUST", "UTOPENEC"],
+  ["HERMELÍN", "PIVO", "ŠIPKA"],
+];
 // kolik "cvaknutí" udělá každý válec, než se zastaví
 const ZASTAVENI = [12, 19, 26];
 
 export function Automat() {
-  const [valce, setValce] = useState<string[][]>([novyValec(), novyValec(), novyValec()]);
+  const [valce, setValce] = useState<string[][]>(VYCHOZI_VALCE);
   const [stoji, setStoji] = useState<boolean[]>([true, true, true]);
   const [paka, setPaka] = useState(false);
   const [vyhra, setVyhra] = useState(false);

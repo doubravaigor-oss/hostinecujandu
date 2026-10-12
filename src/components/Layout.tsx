@@ -145,6 +145,11 @@ function VerejnaCast({ children }: { children: ReactNode }) {
             </a>
           </div>
         )}
+        <div className="mt-1">
+          <a href={kontakt.hodnoceni} target="_blank" rel="noreferrer">
+            ★ Ohodnoťte nás na Googlu »
+          </a>
+        </div>
         <div className="mt-2 flex flex-wrap justify-center gap-1">
           {plakety.map((p) => (
             <span key={p} className="retro-badge">
