@@ -7,19 +7,19 @@ export const kontakt = {
   nazev: "Hostinec U Jandů",
   obec: "Nadějkov",
   okres: "okres Tábor, Jihočeský kraj",
-  adresa: "Nadějkov (přesná adresa bude doplněna)",
+  adresa: "Náměstí Prokopa Chocholouška 18",
   telefon: "732 350 877",
   telefonOdkaz: "tel:+420732350877",
-  facebook: "", // doplnit přesný odkaz na Facebook, až bude známý
-  mapaOdkaz: "https://www.google.com/maps/search/?api=1&query=Hostinec+U+Jand%C5%AF+Nad%C4%9Bjkov",
-  mapaVlozena: "https://www.google.com/maps?q=Nad%C4%9Bjkov&z=14&output=embed",
+  facebook: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
+  mapaOdkaz: "https://www.google.com/maps/search/?api=1&query=N%C3%A1m%C4%9Bst%C3%AD+Prokopa+Chocholou%C5%A1ka+18%2C+Nad%C4%9Bjkov",
+  mapaVlozena: "https://www.google.com/maps?q=N%C3%A1m%C4%9Bst%C3%AD%20Prokopa%20Chocholou%C5%A1ka%2018%2C%20Nad%C4%9Bjkov&z=17&output=embed",
 };
 
 export const oteviraciDoba: { den: string; cas: string }[] = [
   { den: "Pondělí – Čtvrtek", cas: "zavřeno" },
-  { den: "Pátek", cas: "otevřeno – hodiny doplníme" },
-  { den: "Sobota", cas: "otevřeno – hodiny doplníme" },
-  { den: "Neděle", cas: "otevřeno – hodiny doplníme" },
+  { den: "Pátek", cas: "17:00 – 22:00" },
+  { den: "Sobota", cas: "17:00 – 22:00" },
+  { den: "Neděle", cas: "17:00 – 22:00" },
 ];
 
 export type Polozka = { nazev: string; cena: string };
