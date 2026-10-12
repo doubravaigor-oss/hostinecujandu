@@ -58,6 +58,11 @@ async function prepisDb(context: { supabase: unknown }) {
       data?: unknown;
       error?: { message: string } | null;
     }>;
+    storage: {
+      from(kosik: string): {
+        remove(cesty: string[]): Promise<{ error?: { message: string } | null }>;
+      };
+    };
   };
 }
 
@@ -128,8 +133,21 @@ export const smazatRadek = createServerFn({ method: "POST" })
     const db = await prepisDb(context);
     await musiBytAdmin(db, context.userId);
     const definice = Tabelky[data.tabulka];
+
+    // U fotek vyhodíme i soubor z úložiště, ať se tam nehrromadí nic navíc.
+    let cesta: string | null = null;
+    if (data.tabulka === "fotky") {
+      const { data: radek } = await db
+        .from(definice.tabela)
+        .select("storage_path")
+        .eq("id", data.id)
+        .maybeSingle();
+      cesta = (radek?.["storage_path"] as string | null) ?? null;
+    }
+
     const { error } = await db.from(definice.tabela).delete().eq("id", data.id);
     if (error) throw new Error("Nepodařilo se smazat: " + error.message);
+    if (cesta) await db.storage.from("fotky").remove([cesta]);
     await zaznamenatZmenu(db);
     return { ok: true as const };
   });
