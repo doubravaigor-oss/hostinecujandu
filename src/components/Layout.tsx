@@ -95,7 +95,7 @@ export function Layout({ children }: { children: ReactNode }) {
           ))}
         </div>
         <div className="mt-1 text-muted-foreground">Web naposledy doplněn: {stavWebu.naposledyDoplneno}</div>
-        <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči :-) · Na zdraví!</div>
+        <div className="mt-1 text-muted-foreground">Na zdraví!</div>
       </footer>
     </div>
   );
