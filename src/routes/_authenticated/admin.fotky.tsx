@@ -14,7 +14,7 @@ import { obsahQuery, type ObsahFotka } from "@/lib/obsah.functions";
 import { posunoutRadek, smazatRadek, ulozitRadek } from "@/lib/admin.functions";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/_authenticated/admin.fotky")({
+export const Route = createFileRoute("/_authenticated/admin/fotky")({
   head: () => ({
     meta: [
       { title: "Fotogalerie – administrace – Hostinec U Jandů" },

@@ -13,7 +13,7 @@ import {
 import { obsahQuery, type ObsahKategorie, type ObsahPolozka } from "@/lib/obsah.functions";
 import { posunoutRadek, smazatRadek, ulozitRadek } from "@/lib/admin.functions";
 
-export const Route = createFileRoute("/_authenticated/admin.jidlo")({
+export const Route = createFileRoute("/_authenticated/admin/jidlo")({
   head: () => ({
     meta: [
       { title: "Jídelní lístek – administrace – Hostinec U Jandů" },

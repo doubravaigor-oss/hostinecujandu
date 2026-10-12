@@ -10,11 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AktualneRouteImport } from './routes/aktualne'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
+import { Route as AuthenticatedAdminFotkyRouteImport } from './routes/_authenticated/admin.fotky'
+import { Route as AuthenticatedAdminJidloRouteImport } from './routes/_authenticated/admin.jidlo'
 import { Route as ApiPublicFotkaIdRouteImport } from './routes/api/public/fotka/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -22,9 +26,18 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AktualneRoute = AktualneRouteImport.update({
   id: '/aktualne',
   path: '/aktualne',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalerieRoute = GalerieRouteImport.update({
@@ -47,6 +60,16 @@ const OslavyRoute = OslavyRouteImport.update({
   path: '/oslavy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminFotkyRoute = AuthenticatedAdminFotkyRouteImport.update({
+  id: '/admin/fotky',
+  path: '/admin/fotky',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminJidloRoute = AuthenticatedAdminJidloRouteImport.update({
+  id: '/admin/jidlo',
+  path: '/admin/jidlo',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const ApiPublicFotkaIdRoute = ApiPublicFotkaIdRouteImport.update({
   id: '/api/public/fotka/$id',
   path: '/api/public/fotka/$id',
@@ -56,29 +79,39 @@ const ApiPublicFotkaIdRoute = ApiPublicFotkaIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/_authenticated/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/_authenticated/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRouteTypes {
@@ -86,34 +119,46 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/aktualne'
+    | '/auth'
     | '/galerie'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/admin/fotky'
+    | '/admin/jidlo'
     | '/api/public/fotka/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/aktualne'
+    | '/auth'
     | '/galerie'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/admin/fotky'
+    | '/admin/jidlo'
     | '/api/public/fotka/$id'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/aktualne'
+    | '/auth'
     | '/galerie'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/_authenticated/admin/fotky'
+    | '/_authenticated/admin/jidlo'
     | '/api/public/fotka/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AktualneRoute: typeof AktualneRoute
+  AuthRoute: typeof AuthRoute
   GalerieRoute: typeof GalerieRoute
   JidloRoute: typeof JidloRoute
   KontaktRoute: typeof KontaktRoute
@@ -130,11 +175,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aktualne': {
       id: '/aktualne'
       path: '/aktualne'
       fullPath: '/aktualne'
       preLoaderRoute: typeof AktualneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galerie': {
@@ -165,6 +224,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OslavyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/fotky': {
+      id: '/_authenticated/admin/fotky'
+      path: '/admin/fotky'
+      fullPath: '/admin/fotky'
+      preLoaderRoute: typeof AuthenticatedAdminFotkyRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/jidlo': {
+      id: '/_authenticated/admin/jidlo'
+      path: '/admin/jidlo'
+      fullPath: '/admin/jidlo'
+      preLoaderRoute: typeof AuthenticatedAdminJidloRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/api/public/fotka/$id': {
       id: '/api/public/fotka/$id'
       path: '/api/public/fotka/$id'
@@ -175,9 +248,24 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminFotkyRoute: typeof AuthenticatedAdminFotkyRoute
+  AuthenticatedAdminJidloRoute: typeof AuthenticatedAdminJidloRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminFotkyRoute: AuthenticatedAdminFotkyRoute,
+  AuthenticatedAdminJidloRoute: AuthenticatedAdminJidloRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AktualneRoute: AktualneRoute,
+  AuthRoute: AuthRoute,
   GalerieRoute: GalerieRoute,
   JidloRoute: JidloRoute,
   KontaktRoute: KontaktRoute,
