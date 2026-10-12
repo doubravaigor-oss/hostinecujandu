@@ -83,6 +83,16 @@ export const nabidkaOslav: string[] = [
   "Další akce podle přání zákazníka",
 ];
 
+// Co už jsme za rok a půl uspořádali (zadáno majitelem – přepisovat doslova)
+export const usporadaneAkce: string[] = [
+  "Autentická čínská hostina",
+  "Snídaně / brunch hotelového typu",
+  "Narozeninové oslavy – formou zanášeného jídla i rautu, se zábavou a veselicí",
+  "Občerstvení na pochodech",
+  "Občerstvení na Svatováclavské Potulce",
+  "Smuteční hostiny",
+];
+
 export const aktuality: { datum: string; nadpis: string; text: string; nove?: boolean }[] = [
   {
     datum: "",
