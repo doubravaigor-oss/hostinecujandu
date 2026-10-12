@@ -10,6 +10,7 @@ export const kontakt = {
   adresa: "Náměstí Prokopa Chocholouška 18",
   telefon: "732 350 877",
   telefonOdkaz: "tel:+420732350877",
+  email: "doubrava.igor@gmail.com",
   facebook: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
   mapaOdkaz: "https://www.google.com/maps/search/?api=1&query=N%C3%A1m%C4%9Bst%C3%AD+Prokopa+Chocholou%C5%A1ka+18%2C+Nad%C4%9Bjkov",
   mapaVlozena: "https://www.google.com/maps?q=N%C3%A1m%C4%9Bst%C3%AD%20Prokopa%20Chocholou%C5%A1ka%2018%2C%20Nad%C4%9Bjkov&z=17&output=embed",
