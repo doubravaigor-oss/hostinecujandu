@@ -4,7 +4,7 @@ import { aktuality } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => seo("Pivnice, hospodská kuchyně a oslavy", "Hostinec U Jandů v Nadějkově – pivnice a tradiční hospodská kuchyně, otevřeno pátek až neděle. Turnaje v šipkách, třídní srazy, oslavy i konference."),
+  head: () => seo("Pivnice, hospodská kuchyně a oslavy", "Hostinec U Jandů v Nadějkově – vaříme pouze z čerstvých surovin, bez umělých dochucovadel. Otevřeno pátek až neděle. Turnaje v šipkách, oslavy i konference."),
   component: Index,
 });
 
@@ -13,6 +13,7 @@ function Index() {
     <>
       <Box title="Běžný provoz hostince">
         <p>Jsme tradiční venkovská pivnice s běžným hospodským jídlem.</p>
+        <p className="mt-1 font-bold">Vaříme pouze z čerstvých surovin – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin!</p>
         <ul className="mt-2 list-disc pl-5">
           <li>čepované pivo</li>
           <li>klasická hospodská kuchyně</li>

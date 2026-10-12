@@ -33,7 +33,7 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
       { nazev: "Vinárníkovy tousty", cena: "85 Kč" },
       { nazev: "Nakládaný hermelín", cena: "90 Kč", popis: "★ Česká hospodská klasika. Naložený hermelín – s chlebem a vychlazeným pivem nemá konkurenci." },
       { nazev: "Ďábelská topinka", cena: "90 Kč" },
-      { nazev: "Pizza della casa", cena: "165 Kč", popis: "★ Žádná placka z krabice! Pizza od pražské rodinné firmy Pizza Della Casa – tradiční receptura a kvalitní suroviny. Křupavá, horká a rovnou k pivu." },
+      { nazev: "Pizza della casa", cena: "165 Kč", popis: "★ Pizza od pražské rodinné firmy Pizza Della Casa – tradiční italská receptura a kvalitní suroviny. Rovnou k pivu." },
       { nazev: "Táboráček", cena: "50 Kč" },
     ],
   },
@@ -48,6 +48,12 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   { kategorie: "Čepované pivo", polozky: [] },
   { kategorie: "Nealko a ostatní nápoje", polozky: [] },
 ];
+
+// Benefit kuchyně (zadáno majitelem – na webu jako hlavní přednost)
+export const kuchyneSlib = {
+  nadpis: "Vaříme pouze z čerstvých surovin!",
+  text: "Když u nás vaříme, snažíme se používat pouze čerstvé suroviny – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin. Chceme, abyste na venkově získali to, kvůli čemu tam žijete.",
+};
 
 // Stav webu – pásek "ještě se buduje" a údaj o posledním doplnění.
 // Až něco doplníte, přepište datum naposledyDoplneno.

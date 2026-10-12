@@ -1,16 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Box } from "@/components/Layout";
-import { jidelniListek } from "@/data/hostinec";
+import { jidelniListek, kuchyneSlib } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/jidlo")({
-  head: () => seo("Jídlo a pití", "Jídelní a nápojový lístek Hostince U Jandů v Nadějkově – hospodská kuchyně, víkendové speciality a čepované pivo."),
+  head: () => seo("Jídlo a pití", "Vaříme pouze z čerstvých surovin, bez umělých dochucovadel. Jídelní a nápojový lístek Hostince U Jandů v Nadějkově."),
   component: Jidlo,
 });
 
 function Jidlo() {
   return (
     <Box title="Jídlo a pití">
+      <div className="frame bg-beer p-2 mb-3 text-center">
+        <div className="font-bold text-base underline">{kuchyneSlib.nadpis}</div>
+        <div className="text-xs mt-1">{kuchyneSlib.text}</div>
+      </div>
       {jidelniListek.map((k) => (
         <div key={k.kategorie} className="mb-3">
           <h3 className="text-lg underline">{k.kategorie}</h3>
