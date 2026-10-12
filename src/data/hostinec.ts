@@ -111,4 +111,20 @@ export const aktuality: { datum: string; nadpis: string; text: string; nove?: bo
 // Fotky: přidávají se sem (src = adresa obrázku, popis = text pod fotkou)
 export const fotky: { src: string; popis: string }[] = [
   { src: rizekFoto.url, popis: "Řízky s bramborovým salátem" },
+    { src: new URL("../assets/IMG_0482 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_0484 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_1731 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_1766 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2609 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2617 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2715 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2721 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2732 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_2767 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_4530 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_4572 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_9794 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_9839 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_9949 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
+  { src: new URL("../assets/IMG_9981 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
 ];
