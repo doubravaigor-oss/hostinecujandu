@@ -3,7 +3,7 @@ import burt from "@/assets/burt.png";
 import hermelin from "@/assets/hermelin.png";
 import utopenec from "@/assets/utopenec.png";
 
-const OBR = [utopenec, utopenec, burt, burt, hermelin];
+const OBR = [utopenec, utopenec, utopenec, burt, hermelin];
 const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec;
 
 const SYMBOLY = ["UTOPENEC", "HERMELÍN", "PIVO", "ŠIPKA", "TOUST"];
