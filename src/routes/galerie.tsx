@@ -17,7 +17,7 @@ function Galerie() {
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
           {fotky.map((f) => (
             <figure key={f.src} className="frame bg-paper p-1 text-center text-xs">
-              <img src={f.src} alt={f.popis} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+              <img src={f.src} alt={f.popis} loading="lazy" className="aspect-[3/4] w-full object-cover" />
               <figcaption>{f.popis}</figcaption>
             </figure>
           ))}

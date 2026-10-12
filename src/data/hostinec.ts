@@ -92,4 +92,6 @@ export const aktuality: { datum: string; nadpis: string; text: string; nove?: bo
 ];
 
 // Fotky: přidávají se sem (src = adresa obrázku, popis = text pod fotkou)
-export const fotky: { src: string; popis: string }[] = [];
+export const fotky: { src: string; popis: string }[] = [
+  { src: rizekFoto.url, popis: "Řízky s bramborovým salátem" },
+];
