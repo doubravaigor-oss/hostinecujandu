@@ -160,3 +160,6 @@
     animation: stripes 1.2s linear infinite;
   }
 }
+
+@keyframes padat { from { transform: translateY(-10vh) rotate(0deg); } to { transform: translateY(110vh) rotate(360deg); } }
+.padajici { position: absolute; top: 0; animation: padat 2.8s ease-in forwards; opacity: 1; }
