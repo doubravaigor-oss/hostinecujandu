@@ -15,6 +15,7 @@ import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
+import { Route as ApiPublicFotkaIdRouteImport } from './routes/api/public/fotka/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const OslavyRoute = OslavyRouteImport.update({
   path: '/oslavy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFotkaIdRoute = ApiPublicFotkaIdRouteImport.update({
+  id: '/api/public/fotka/$id',
+  path: '/api/public/fotka/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +79,27 @@ export interface FileRoutesById {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
+  fullPaths:
+    | '/'
+    | '/aktualne'
+    | '/galerie'
+    | '/jidlo'
+    | '/kontakt'
+    | '/oslavy'
+    | '/api/public/fotka/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
+  to:
+    | '/'
+    | '/aktualne'
+    | '/galerie'
+    | '/jidlo'
+    | '/kontakt'
+    | '/oslavy'
+    | '/api/public/fotka/$id'
   id:
     | '__root__'
     | '/'
@@ -85,6 +108,7 @@ export interface FileRouteTypes {
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/api/public/fotka/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +118,7 @@ export interface RootRouteChildren {
   JidloRoute: typeof JidloRoute
   KontaktRoute: typeof KontaktRoute
   OslavyRoute: typeof OslavyRoute
+  ApiPublicFotkaIdRoute: typeof ApiPublicFotkaIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OslavyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/fotka/$id': {
+      id: '/api/public/fotka/$id'
+      path: '/api/public/fotka/$id'
+      fullPath: '/api/public/fotka/$id'
+      preLoaderRoute: typeof ApiPublicFotkaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   JidloRoute: JidloRoute,
   KontaktRoute: KontaktRoute,
   OslavyRoute: OslavyRoute,
+  ApiPublicFotkaIdRoute: ApiPublicFotkaIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
