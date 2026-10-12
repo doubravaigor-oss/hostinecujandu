@@ -15,6 +15,10 @@ const VYHRY = [
 
 const VYSKA = 108;
 
+// jedna výhra pro právě losovaný kupon
+const losuj = () => VYHRY[Math.floor(Math.random() * VYHRY.length)] ?? VYHRY[0] ?? "…";
+
+
 export function StiraciLos({ sirka = 176 }: { sirka?: number }) {
   const platno = useRef<HTMLCanvasElement | null>(null);
   const [vyhra, setVyhra] = useState("…");
@@ -24,7 +28,7 @@ export function StiraciLos({ sirka = 176 }: { sirka?: number }) {
 
   // náhoda až po načtení stránky – server a prohlížeč musí začít stejně
   useEffect(() => {
-    setVyhra(VYHRY[Math.floor(Math.random() * VYHRY.length)] ?? VYHRY[0]);
+    setVyhra(losuj());
     setSetreno(false);
     const c = platno.current;
     if (!c) return;
