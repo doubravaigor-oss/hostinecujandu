@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const SYMBOLY = ["UTOPENEC", "HERMELÍN", "PIVO", "ŠIPKA", "TOUST"];
 
 function nahodny() {
-  return SYMBOLY[Math.floor(Math.random() * SYMBOLY.length)];
+  return SYMBOLY[Math.floor(Math.random() * SYMBOLY.length)] ?? "PIVO";
 }
 
 export function Automat() {
@@ -31,8 +31,8 @@ export function Automat() {
         // zhruba každá čtvrtá hra vyhrává
         const vyhrava = Math.random() < 0.28;
         const v = nahodny();
-        const konec = vyhrava ? [v, v, v] : [nahodny(), nahodny(), nahodny()];
-        if (!vyhrava && konec[0] === konec[1] && konec[1] === konec[2]) konec[2] = SYMBOLY[(SYMBOLY.indexOf(konec[2]) + 1) % SYMBOLY.length];
+        const konec: string[] = vyhrava ? [v, v, v] : [nahodny(), nahodny(), nahodny()];
+        if (!vyhrava && konec[0] === konec[1] && konec[1] === konec[2]) konec[2] = SYMBOLY[(SYMBOLY.indexOf(konec[2] ?? "") + 1) % SYMBOLY.length] ?? "PIVO";
         setValce(konec);
         setToci(false);
         if (vyhrava) {
