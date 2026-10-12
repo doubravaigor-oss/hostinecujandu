@@ -15,3 +15,4 @@
 - [x] Výhra v automatu: sypou se velké buřty a hermelín malované lidovým stylem (doplněno 12. 10. 2026)
 - [x] Administrace na adrese /admin – hotová a vyzkoušená: přihlášení, položky, fotky z telefonu, akce, hodiny, texty (12. 10. 2026)
 - [x] Pronájem prostor pro soukromé akce dle individuální nabídky + parkování přímo před objektem (stránka Oslavy, 12. 10. 2026)
+- [x] QR kód na hodnocení na Googlu – rámeček na stránce Kontakt + odkaz v patičce (12. 10. 2026)
