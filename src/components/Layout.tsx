@@ -24,7 +24,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto max-w-[900px] p-1 sm:p-3">
       <header className="frame paper p-2 text-center">
-        <div className="text-xs text-muted-foreground">🍺 vítejte na oficiálních stránkách 🍺</div>
+        <div className="text-xs text-muted-foreground">★ vítejte na oficiálních stránkách ★</div>
         <h1 className="text-2xl sm:text-4xl" style={{ textShadow: "2px 2px 0 var(--beer)" }}>
           HOSTINEC U JANDŮ – NADĚJKOV
         </h1>
@@ -82,7 +82,7 @@ export function Layout({ children }: { children: ReactNode }) {
             <a href={kontakt.facebook} target="_blank" rel="noreferrer">Na Facebooku »</a>
           </div>
         )}
-        <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči 😉 · Na zdraví!</div>
+        <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči :-) · Na zdraví!</div>
       </footer>
     </div>
   );
