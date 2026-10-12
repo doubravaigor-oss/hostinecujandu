@@ -92,7 +92,7 @@ export function Cihlicky() {
         for (let y = 0; y < 420; y += 4) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(640, y); ctx.stroke(); }
         ctx.globalAlpha = 1;
         for (const brick of bricks) {
-          ctx.fillStyle = palette[Math.max(0, Math.min(3, Math.round((brick.position.y - 55) / 25)))];
+          ctx.fillStyle = palette[Math.max(0, Math.min(3, Math.round((brick.position.y - 55) / 25)))] ?? ink;
           ctx.fillRect(brick.position.x - 26.5, brick.position.y - 9, 53, 18);
           ctx.fillStyle = ink; ctx.globalAlpha = 0.35; ctx.fillRect(brick.position.x - 25, brick.position.y - 8, 50, 2); ctx.globalAlpha = 1;
         }
