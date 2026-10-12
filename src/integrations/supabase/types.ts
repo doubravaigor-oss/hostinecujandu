@@ -14,16 +14,253 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_whitelist: {
+        Row: {
+          email: string
+          poznamka: string
+        }
+        Insert: {
+          email: string
+          poznamka?: string
+        }
+        Update: {
+          email?: string
+          poznamka?: string
+        }
+        Relationships: []
+      }
+      akce: {
+        Row: {
+          created_at: string
+          datum: string
+          foto_id: string | null
+          id: string
+          nadpis: string
+          nove: boolean
+          poradi: number
+          text: string
+        }
+        Insert: {
+          created_at?: string
+          datum?: string
+          foto_id?: string | null
+          id?: string
+          nadpis: string
+          nove?: boolean
+          poradi?: number
+          text?: string
+        }
+        Update: {
+          created_at?: string
+          datum?: string
+          foto_id?: string | null
+          id?: string
+          nadpis?: string
+          nove?: boolean
+          poradi?: number
+          text?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "akce_foto_id_fkey"
+            columns: ["foto_id"]
+            isOneToOne: false
+            referencedRelation: "fotky"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      fotky: {
+        Row: {
+          asset_url: string | null
+          created_at: string
+          id: string
+          popis: string
+          poradi: number
+          storage_path: string | null
+        }
+        Insert: {
+          asset_url?: string | null
+          created_at?: string
+          id?: string
+          popis?: string
+          poradi?: number
+          storage_path?: string | null
+        }
+        Update: {
+          asset_url?: string | null
+          created_at?: string
+          id?: string
+          popis?: string
+          poradi?: number
+          storage_path?: string | null
+        }
+        Relationships: []
+      }
+      hodiny: {
+        Row: {
+          cas: string
+          den: string
+          id: string
+          poradi: number
+        }
+        Insert: {
+          cas: string
+          den: string
+          id?: string
+          poradi?: number
+        }
+        Update: {
+          cas?: string
+          den?: string
+          id?: string
+          poradi?: number
+        }
+        Relationships: []
+      }
+      hodiny_zmeny: {
+        Row: {
+          created_at: string
+          id: string
+          platnost: string
+          text: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          platnost?: string
+          text: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          platnost?: string
+          text?: string
+        }
+        Relationships: []
+      }
+      menu_kategorie: {
+        Row: {
+          id: string
+          nazev: string
+          poradi: number
+        }
+        Insert: {
+          id?: string
+          nazev: string
+          poradi?: number
+        }
+        Update: {
+          id?: string
+          nazev?: string
+          poradi?: number
+        }
+        Relationships: []
+      }
+      menu_polozky: {
+        Row: {
+          cena: string
+          id: string
+          kategorie_id: string
+          nazev: string
+          popis: string
+          poradi: number
+        }
+        Insert: {
+          cena: string
+          id?: string
+          kategorie_id: string
+          nazev: string
+          popis?: string
+          poradi?: number
+        }
+        Update: {
+          cena?: string
+          id?: string
+          kategorie_id?: string
+          nazev?: string
+          popis?: string
+          poradi?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_polozky_kategorie_id_fkey"
+            columns: ["kategorie_id"]
+            isOneToOne: false
+            referencedRelation: "menu_kategorie"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      nastaveni: {
+        Row: {
+          hodnota: string
+          klic: string
+        }
+        Insert: {
+          hodnota: string
+          klic: string
+        }
+        Update: {
+          hodnota?: string
+          klic?: string
+        }
+        Relationships: []
+      }
+      pravidelne_akce: {
+        Row: {
+          id: string
+          nazev: string
+          poradi: number
+          text: string
+        }
+        Insert: {
+          id?: string
+          nazev: string
+          poradi?: number
+          text?: string
+        }
+        Update: {
+          id?: string
+          nazev?: string
+          poradi?: number
+          text?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +387,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin"],
+    },
   },
 } as const
