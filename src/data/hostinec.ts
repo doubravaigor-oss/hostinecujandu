@@ -119,7 +119,7 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
 // Benefit kuchyně (zadáno majitelem – na webu jako hlavní přednost)
 export const kuchyneSlib = {
   nadpis: "Vaříme pouze z čerstvých surovin!",
-  text: "Když u nás vaříme, snažíme se používat pouze čerstvé suroviny – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin. Chceme, abyste na venkově získali to, kvůli čemu tam žijete.",
+  text: "Když u nás vaříme, snažíme se používat pouze čerstvé suroviny – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin. Bez výmluv.",
 };
 
 // Stav webu – pásek "ještě se buduje" a údaj o posledním doplnění.
