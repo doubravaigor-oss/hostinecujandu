@@ -110,3 +110,53 @@
 
 @keyframes marquee { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 @utility marquee-text { display: inline-block; white-space: nowrap; animation: marquee 18s linear infinite; }
+
+/* Malé retro plakety v patičce (styl 88x31 tlacitek z starych webu) */
+@utility retro-badge {
+  display: inline-block;
+  padding: 3px 7px;
+  border: 2px outset oklch(0.75 0.03 85);
+  background: linear-gradient(to bottom, var(--wood-light), var(--wood));
+  color: var(--beer) !important;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+/* Barevny pasek "jeste se buduje" - jedouci sikme pruhy */
+@keyframes stripes { from { background-position: 0 0; } to { background-position: 22.6px 0; } }
+@utility pod-konstrukci {
+  position: relative;
+  background: var(--beer);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid var(--border);
+  padding: 9px 8px 10px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-image: repeating-linear-gradient(45deg, var(--wood) 0 8px, oklch(0 0 0 / 0.75) 8px 16px);
+    animation: stripes 1.2s linear infinite;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-image: repeating-linear-gradient(45deg, var(--wood) 0 8px, oklch(0 0 0 / 0.75) 8px 16px);
+    animation: stripes 1.2s linear infinite;
+  }
+}

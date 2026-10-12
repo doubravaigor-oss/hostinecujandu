@@ -47,6 +47,21 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   { kategorie: "Nealko a ostatní nápoje", polozky: [] },
 ];
 
+// Stav webu – pásek "ještě se buduje" a údaj o posledním doplnění.
+// Až něco doplníte, přepište datum naposledyDoplneno.
+export const stavWebu = {
+  podKonstrukci: ">>> TENTO WEB JEŠTĚ DOPLŇUJEME – fotky a termíny akcí brzy <<<",
+  naposledyDoplneno: "12. 10. 2026",
+};
+
+// Malé plakety v patičce (retro tlačítka z starých webů)
+export const plakety: string[] = [
+  "Nejlépe zobrazíte v jakémkoliv prohlížeči",
+  "800×600",
+  "Staré HTML",
+  "Vyrobeno s láskou ke starým webům",
+];
+
 // Pravidelné akce, které se v hospodě opakují
 export const pravidelneAkce: { nazev: string; text: string }[] = [
   {

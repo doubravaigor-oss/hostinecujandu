@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { kontakt, oteviraciDoba } from "@/data/hostinec";
+import { kontakt, oteviraciDoba, plakety, stavWebu } from "@/data/hostinec";
 
 const menu = [
   { to: "/", label: "Úvod" },
@@ -42,6 +42,8 @@ export function Layout({ children }: { children: ReactNode }) {
         <span className="marquee-text">*** Otevřeno pátek – sobota – neděle 17:00–22:00 *** Šipky 301 single out – turnaj zhruba jednou za měsíc *** Oslavy, srazy, hostiny, konference *** Volejte {kontakt.telefon} ***</span>
       </div>
 
+      <div className="pod-konstrukci mt-1 text-xs">{stavWebu.podKonstrukci}</div>
+
       <div className="mt-2 grid gap-2 md:grid-cols-[180px_minmax(0,1fr)]">
         <aside className="space-y-2">
           <nav className="frame paper p-2">
@@ -82,6 +84,12 @@ export function Layout({ children }: { children: ReactNode }) {
             <a href={kontakt.facebook} target="_blank" rel="noreferrer">Na Facebooku »</a>
           </div>
         )}
+        <div className="mt-2 flex flex-wrap justify-center gap-1">
+          {plakety.map((p) => (
+            <span key={p} className="retro-badge">{p}</span>
+          ))}
+        </div>
+        <div className="mt-1 text-muted-foreground">Web naposledy doplněn: {stavWebu.naposledyDoplneno}</div>
         <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči :-) · Na zdraví!</div>
       </footer>
     </div>
