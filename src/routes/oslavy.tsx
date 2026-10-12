@@ -42,7 +42,7 @@ function Oslavy() {
         </div>
       </Box>
       <Box title="★ Pro firmy a konference ★">
-        <img src={fotky[1].src} alt={fotky[1].popis} className="frame mb-2 w-full max-w-md mx-auto block" loading="lazy" />
+        <img src={fotky[1]?.src} alt={fotky[1]?.popis} className="frame mb-2 w-full max-w-md mx-auto block" loading="lazy" />
         <ul className="border-2 border-border bg-beer/20 p-2 pl-6 list-disc">
           {proFirmy.map((t) => (
             <li key={t} className="py-0.5 font-bold">{t}</li>
