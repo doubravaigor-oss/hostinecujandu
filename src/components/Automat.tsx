@@ -1,4 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import burt from "@/assets/burt.png";
+import hermelin from "@/assets/hermelin.png";
+import utopenec from "@/assets/utopenec.png";
+
+const OBR = [utopenec, utopenec, utopenec, burt, hermelin];
+const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec;
 
 const SYMBOLY = ["UTOPENEC", "HERMELÍN", "PIVO", "ŠIPKA", "TOUST"];
 const rnd = () => SYMBOLY[Math.floor(Math.random() * SYMBOLY.length)] ?? "PIVO";
@@ -12,7 +18,7 @@ export function Automat() {
   const [paka, setPaka] = useState(false);
   const [vyhra, setVyhra] = useState(false);
   const [zprava, setZprava] = useState("Zatáhněte za páku!");
-  const [padaji, setPadaji] = useState<{ id: number; txt: string; left: number; delay: number }[]>([]);
+  const [padaji, setPadaji] = useState<{ id: number; img: string; vel: number; left: number; delay: number; trv: number }[]>([]);
   const casovac = useRef<ReturnType<typeof setInterval> | null>(null);
   const bezi = stoji.some((s) => !s);
 
@@ -52,14 +58,16 @@ export function Automat() {
           setVyhra(true);
           setZprava("VÝHRA! JACKPOT!");
           setPadaji(
-            Array.from({ length: 24 }, (_, i) => ({
+            Array.from({ length: 26 }, (_, i) => ({
               id: i,
-              txt: i % 2 ? "HERMELÍN" : "UTOPENEC",
-              left: Math.random() * 90,
-              delay: Math.random() * 1.2,
+              img: nahodnyObr(),
+              vel: 90 + Math.round(Math.random() * 100),
+              left: 2 + (i + 0.5) * (96 / 26) + (Math.random() * 4 - 2),
+              delay: Math.random() * 1.4,
+              trv: 2.6 + Math.random() * 1.3,
             })),
           );
-          setTimeout(() => setPadaji([]), 4500);
+          setTimeout(() => setPadaji([]), 5200);
         } else {
           setZprava("Nic. Zkuste to znovu :-)");
         }
@@ -177,9 +185,22 @@ export function Automat() {
       {padaji.length > 0 && (
         <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden" aria-hidden="true">
           {padaji.map((p) => (
-            <span key={p.id} className="padajici retro-badge" style={{ left: `${p.left}%`, animationDelay: `${p.delay}s` }}>
-              {p.txt}
-            </span>
+            <img
+              key={p.id}
+              src={p.img}
+              alt=""
+              loading="lazy"
+              width={360}
+              height={360}
+              className="padajici"
+              style={{
+                left: `${p.left}%`,
+                width: p.vel,
+                height: p.vel,
+                animationDelay: `${p.delay}s`,
+                animationDuration: `${p.trv}s`,
+              }}
+            />
           ))}
         </div>
       )}
