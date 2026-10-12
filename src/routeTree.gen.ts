@@ -18,6 +18,7 @@ import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminAkceRouteImport } from './routes/_authenticated/admin.akce'
 import { Route as AuthenticatedAdminFotkyRouteImport } from './routes/_authenticated/admin.fotky'
 import { Route as AuthenticatedAdminHodinyRouteImport } from './routes/_authenticated/admin.hodiny'
@@ -69,6 +70,11 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
 const AuthenticatedAdminAkceRoute = AuthenticatedAdminAkceRouteImport.update({
   id: '/akce',
   path: '/akce',
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesByTo {
@@ -125,12 +132,12 @@ export interface FileRoutesByTo {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
-  '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/admin/akce': typeof AuthenticatedAdminAkceRoute
   '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
   '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesById {
@@ -149,6 +156,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/_authenticated/admin/jidlo': typeof AuthenticatedAdminJidloRoute
   '/_authenticated/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRouteTypes {
@@ -167,6 +175,7 @@ export interface FileRouteTypes {
     | '/admin/hodiny'
     | '/admin/jidlo'
     | '/admin/texty'
+    | '/admin/'
     | '/api/public/fotka/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -177,12 +186,12 @@ export interface FileRouteTypes {
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
-    | '/admin'
     | '/admin/akce'
     | '/admin/fotky'
     | '/admin/hodiny'
     | '/admin/jidlo'
     | '/admin/texty'
+    | '/admin'
     | '/api/public/fotka/$id'
   id:
     | '__root__'
@@ -200,6 +209,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/hodiny'
     | '/_authenticated/admin/jidlo'
     | '/_authenticated/admin/texty'
+    | '/_authenticated/admin/'
     | '/api/public/fotka/$id'
   fileRoutesById: FileRoutesById
 }
@@ -280,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/akce': {
       id: '/_authenticated/admin/akce'
       path: '/akce'
@@ -331,6 +348,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminHodinyRoute: typeof AuthenticatedAdminHodinyRoute
   AuthenticatedAdminJidloRoute: typeof AuthenticatedAdminJidloRoute
   AuthenticatedAdminTextyRoute: typeof AuthenticatedAdminTextyRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
@@ -339,6 +357,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminHodinyRoute: AuthenticatedAdminHodinyRoute,
   AuthenticatedAdminJidloRoute: AuthenticatedAdminJidloRoute,
   AuthenticatedAdminTextyRoute: AuthenticatedAdminTextyRoute,
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
 }
 
 const AuthenticatedAdminRouteWithChildren =

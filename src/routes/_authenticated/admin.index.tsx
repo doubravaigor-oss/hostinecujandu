@@ -8,7 +8,7 @@ import { obsahQuery, textyObsah } from "@/lib/obsah.functions";
 import { jestAdmin } from "@/lib/admin.functions";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/_authenticated/admin/index")({
+export const Route = createFileRoute("/_authenticated/admin/")({
   component: Admin,
 });
 
