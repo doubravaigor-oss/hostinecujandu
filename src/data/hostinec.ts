@@ -47,11 +47,30 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   { kategorie: "Nealko a ostatní nápoje", polozky: [] },
 ];
 
+// Pravidelné akce, které se v hospodě opakují
+export const pravidelneAkce: { nazev: string; text: string }[] = [
+  {
+    nazev: "Turnaj v šipkách",
+    text: "Pořádáme turnaj v šipkách 301 single out – zhruba jednou za měsíc. Konkrétní termín vždy upřesníme po telefonu.",
+  },
+];
+
+// Co všechno umíme zajistit – vše na přání zákazníka
+export const nabidkaOslav: string[] = [
+  "Třídní srazy a setkání",
+  "Narozeninové oslavy a výročí",
+  "Pohřební hostiny",
+  "Konference a firemní akce",
+  "Rauty a společenská setkání",
+  "Svatební a jiné slavnostní hostiny",
+  "Další akce podle přání zákazníka",
+];
+
 export const aktuality: { datum: string; nadpis: string; text: string; nove?: boolean }[] = [
   {
     datum: "",
     nadpis: "Nový web hostince je spuštěn!",
-    text: "Vítejte na našich nových stránkách. Brzy zde najdete víkendovou nabídku, šipkové turnaje a další akce.",
+    text: "Vítejte na našich nových stránkách. Brzy zde najdete víkendovou nabídku a termíny dalších akcí.",
     nove: true,
   },
 ];

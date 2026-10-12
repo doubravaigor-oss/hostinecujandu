@@ -4,7 +4,7 @@ import { aktuality } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => seo("Pivnice, hospodská kuchyně a oslavy", "Hostinec U Jandů v Nadějkově – pivnice a tradiční hospodská kuchyně, otevřeno pátek až neděle. Pořádáme oslavy, svatby, rauty a konference."),
+  head: () => seo("Pivnice, hospodská kuchyně a oslavy", "Hostinec U Jandů v Nadějkově – pivnice a tradiční hospodská kuchyně, otevřeno pátek až neděle. Turnaje v šipkách, třídní srazy, oslavy i konference."),
   component: Index,
 });
 
@@ -18,13 +18,14 @@ function Index() {
           <li>klasická hospodská kuchyně</li>
           <li>víkendové speciality</li>
           <li>společenské posezení</li>
+          <li>turnaj v šipkách 301 single out – zhruba jednou za měsíc</li>
         </ul>
         <p className="mt-2">Pravidelně máme otevřeno v <b>pátek, sobotu a neděli</b> vždy od <b>17:00 do 22:00</b>.</p>
       </Box>
       <section className="frame mb-3 bg-wood p-3 text-beer">
         <h2 className="text-2xl" style={{ color: "var(--beer)" }}>★ Oslavy, rauty a hostiny ★</h2>
         <p className="my-2 text-primary-foreground">
-          Nejsme pouze pivnice – zajistíme rodinné oslavy, svatební hostiny, rauty i firemní konference.
+          Nejsme pouze pivnice – zajistíme třídní srazy, narozeninové oslavy, pohřební hostiny, rauty i firemní konference. Vše na přání zákazníka.
         </p>
         <Link to="/oslavy" className="retro-btn">Více o oslavách »</Link>
       </section>
