@@ -1,3 +1,4 @@
+import rizekFoto from "@/assets/rizek.jpg.asset.json";
 // ================================================================
 //  VŠECHNY TEXTY WEBU NA JEDNOM MÍSTĚ
 //  Změny (jídelníček, akce, otevírací doba…) se dělají jen zde.
