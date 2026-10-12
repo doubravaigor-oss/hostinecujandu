@@ -100,8 +100,11 @@ function Prihlaseni() {
         Tohle je jen pro majitele hostince. Běžní návštěvníci webu se přihlašovat nemusí.
       </p>
 
-      <label className="block text-xs font-bold">Váš e-mail</label>
+      <label htmlFor="prihlaseni-email" className="block text-xs font-bold">
+        Váš e-mail
+      </label>
       <input
+        id="prihlaseni-email"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -110,8 +113,11 @@ function Prihlaseni() {
         autoComplete="username"
       />
 
-      <label className="block text-xs font-bold">Heslo</label>
+      <label htmlFor="prihlaseni-heslo" className="block text-xs font-bold">
+        Heslo
+      </label>
       <input
+        id="prihlaseni-heslo"
         type="password"
         value={heslo}
         onChange={(e) => setHeslo(e.target.value)}
