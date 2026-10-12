@@ -45,27 +45,8 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
     ],
   },
   { kategorie: "Víkendové speciality", polozky: [] },
-  {
-    kategorie: "Čepované pivo",
-    polozky: [
-      { nazev: "Radegast 10°", cena: "41 Kč" },
-      { nazev: "Plzeň 12°", cena: "54 Kč" },
-    ],
-  },
-  {
-    kategorie: "Nealko a ostatní nápoje",
-    polozky: [
-      { nazev: "Espresso", cena: "40 Kč" },
-      { nazev: "Turecká káva", cena: "26 Kč" },
-      { nazev: "Coca-Cola 0,3 l", cena: "35 Kč" },
-      { nazev: "Džus 0,3 l", cena: "39 Kč" },
-      { nazev: "Víno 0,2 l", cena: "45 Kč" },
-      { nazev: "Prosecco 0,2 l", cena: "60 Kč" },
-      { nazev: "Minerálka Ilsano 0,5 l", cena: "30 Kč" },
-      { nazev: "Matcha Johannes", cena: "54 Kč" },
-      { nazev: "Birell", cena: "40 Kč" },
-    ],
-  },
+  { kategorie: "Čepované pivo", polozky: [] },
+  { kategorie: "Nealko a ostatní nápoje", polozky: [] },
 ];
 
 // Benefit kuchyně (zadáno majitelem – na webu jako hlavní přednost)
@@ -130,20 +111,4 @@ export const aktuality: { datum: string; nadpis: string; text: string; nove?: bo
 // Fotky: přidávají se sem (src = adresa obrázku, popis = text pod fotkou)
 export const fotky: { src: string; popis: string }[] = [
   { src: rizekFoto.url, popis: "Řízky s bramborovým salátem" },
-    { src: new URL("../assets/IMG_0482 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_0484 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_1731 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_1766 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2609 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2617 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2715 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2721 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2732 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_2767 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_4530 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_4572 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_9794 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_9839 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_9949 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
-  { src: new URL("../assets/IMG_9981 3 Large.jpeg", import.meta.url).href, popis: "Fotografie Hostince U Jandů" },
 ];
