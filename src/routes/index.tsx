@@ -1,24 +1,42 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Box } from "@/components/Layout";
+import { aktuality } from "@/data/hostinec";
+import { seo } from "@/lib/seo";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => seo("Pivnice, hospodská kuchyně a oslavy", "Hostinec U Jandů v Nadějkově – pivnice a tradiční hospodská kuchyně, otevřeno pátek až neděle. Pořádáme oslavy, svatby, rauty a konference."),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Box title="Běžný provoz hostince">
+        <p>Jsme tradiční venkovská pivnice s běžným hospodským jídlem.</p>
+        <ul className="mt-2 list-disc pl-5">
+          <li>čepované pivo</li>
+          <li>klasická hospodská kuchyně</li>
+          <li>víkendové speciality</li>
+          <li>společenské posezení</li>
+        </ul>
+        <p className="mt-2">Pravidelně máme otevřeno v <b>pátek, sobotu a neděli</b>.</p>
+      </Box>
+      <section className="frame mb-3 bg-wood p-3 text-beer">
+        <h2 className="text-2xl" style={{ color: "var(--beer)" }}>★ Oslavy, rauty a hostiny ★</h2>
+        <p className="my-2 text-primary-foreground">
+          Nejsme pouze pivnice – zajistíme rodinné oslavy, svatební hostiny, rauty i firemní konference.
+        </p>
+        <Link to="/oslavy" className="retro-btn">Více o oslavách »</Link>
+      </section>
+      <Box title="Aktuálně z hospody">
+        {aktuality.slice(0, 3).map((a) => (
+          <p key={a.nadpis} className="mb-1">
+            {a.nove && <span className="blink mr-1 font-bold text-title">NOVÉ!</span>}
+            <b>{a.nadpis}</b> {a.text}
+          </p>
+        ))}
+        <Link to="/aktualne">Všechny aktuality »</Link>
+      </Box>
+    </>
   );
 }
