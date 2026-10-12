@@ -161,5 +161,5 @@
   }
 }
 
-@keyframes padat { from { transform: translateY(-10vh) rotate(0deg); } to { transform: translateY(110vh) rotate(360deg); } }
-.padajici { position: absolute; top: 0; display: block; filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35)); animation: padat 2.8s ease-in forwards; opacity: 1; }
+@keyframes padat { from { transform: translateY(-14vh) rotate(-12deg); } to { transform: translateY(114vh) rotate(24deg); } }
+.padajici { position: absolute; top: 0; display: block; filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.45)) saturate(1.2) contrast(1.1); animation: padat 3s ease-in forwards; opacity: 1; }

@@ -3,7 +3,7 @@ import burt from "@/assets/burt.png";
 import hermelin from "@/assets/hermelin.png";
 import utopenec from "@/assets/utopenec.png";
 
-const OBR = [utopenec, burt, hermelin];
+const OBR = [utopenec, utopenec, burt, burt, hermelin];
 const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec;
 
 const SYMBOLY = ["UTOPENEC", "HERMELÍN", "PIVO", "ŠIPKA", "TOUST"];
@@ -61,10 +61,10 @@ export function Automat() {
             Array.from({ length: 26 }, (_, i) => ({
               id: i,
               img: nahodnyObr(),
-              vel: 70 + Math.round(Math.random() * 90),
-              left: Math.random() * 86,
-              delay: Math.random() * 1.3,
-              trv: 2.3 + Math.random() * 1.3,
+              vel: 90 + Math.round(Math.random() * 100),
+              left: 2 + (i + 0.5) * (96 / 26) + (Math.random() * 4 - 2),
+              delay: Math.random() * 1.4,
+              trv: 2.6 + Math.random() * 1.3,
             })),
           );
           setTimeout(() => setPadaji([]), 5200);
