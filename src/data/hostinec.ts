@@ -141,7 +141,7 @@ export const plakety: string[] = [
 export const pravidelneAkce: { nazev: string; text: string }[] = [
   {
     nazev: "Turnaj v šipkách",
-    text: "Pořádáme turnaj v šipkách 301 single out – zhruba jednou za měsíc. Konkrétní termín vždy upřesníme po telefonu.",
+    text: "Pořádáme turnaj v šipkách 301 single out – zhruba jednou za měsíc. Konkrétní termín vždy upřesníme na Facebooku.",
   },
 ];
 
