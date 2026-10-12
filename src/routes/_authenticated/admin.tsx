@@ -1,5 +1,6 @@
 // Administrace: úvodní obrazovka s přehledem, co se dá spravovat.
-import { createFileRoute, Link, useServerFn } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { AdminShell } from "@/components/Admin";
@@ -54,7 +55,7 @@ function Admin() {
 
   useEffect(() => {
     overit()
-      .then((v) => setPravo(v.admin))
+      .then((v: { admin: boolean }) => setPravo(v.admin))
       .catch(() => setPravo(false));
     supabase.auth.getSession().then(({ data }) => {
       setEmail(data.session?.user.email ?? "");

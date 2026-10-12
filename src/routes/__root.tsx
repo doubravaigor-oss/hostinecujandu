@@ -105,11 +105,13 @@ function oteviraciProGoogle(hodiny: { den: string; cas: string }[]) {
       .map((d) => CZ_DNY[d.trim().toLowerCase()])
       .filter((d): d is string => Boolean(d));
     if (!dny.length) continue;
+    const od = cas[1] ?? "0";
+    const doHodnoty = cas[3] ?? "0";
     specifikace.push({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: dny,
-      opens: `${cas[1].padStart(2, "0")}:${cas[2]}`,
-      closes: `${cas[3].padStart(2, "0")}:${cas[4]}`,
+      opens: `${od.padStart(2, "0")}:${cas[2] ?? "00"}`,
+      closes: `${doHodnoty.padStart(2, "0")}:${cas[4] ?? "00"}`,
     });
   }
   return specifikace;
@@ -136,6 +138,10 @@ function karticka(obsah: Obsah | undefined) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  loader: async ({ context }) => {
+    const obsah = await context.queryClient.ensureQueryData(obsahQuery);
+    return { obsah };
+  },
   head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
@@ -149,10 +155,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [{ type: "application/ld+json", children: karticka(loaderData?.obsah) }],
   }),
-  loader: async ({ context }) => {
-    const obsah = await context.queryClient.ensureQueryData(obsahQuery);
-    return { obsah };
-  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

@@ -143,10 +143,10 @@ export const getObsah = createServerFn({ method: "GET" }).handler(
         hodiny: (ho.data ?? []).map((h) => ({ id: h.id, den: h.den, cas: h.cas })),
         zmeny: (zm.data ?? []).map((z) => ({ id: z.id, text: z.text, platnost: z.platnost })),
         texty: {
-          banner: texty.banner ?? "",
-          naposledy: texty.naposledy ?? "",
-          kuchyne_nadpis: texty.kuchyne_nadpis ?? "",
-          kuchyne_text: texty.kuchyne_text ?? "",
+          banner: texty["banner"] ?? "",
+          naposledy: texty["naposledy"] ?? "",
+          kuchyne_nadpis: texty["kuchyne_nadpis"] ?? "",
+          kuchyne_text: texty["kuchyne_text"] ?? "",
         },
       };
     } catch {

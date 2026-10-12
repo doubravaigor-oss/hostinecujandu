@@ -1,5 +1,6 @@
 // Administrace: jídelní a nápojový lístek.
-import { createFileRoute, useServerFn } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import {

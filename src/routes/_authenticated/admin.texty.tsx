@@ -1,5 +1,6 @@
 // Administrace: texty, které se nehodí do jídelního lístku ani do akcí.
-import { createFileRoute, useServerFn } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { AdminShell, DlouhePole, Polek, Tlacitko, useUloziti } from "@/components/Admin";

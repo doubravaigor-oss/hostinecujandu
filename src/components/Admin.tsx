@@ -166,6 +166,6 @@ export function DlouhePole({
   );
 }
 
-export function Pravida({ deti }: { deti: ReactNode }) {
-  return <div className="mt-1 flex flex-wrap gap-1">{deti}</div>;
+export function Pravida({ children }: { children: ReactNode }) {
+  return <div className="mt-1 flex flex-wrap gap-1">{children}</div>;
 }

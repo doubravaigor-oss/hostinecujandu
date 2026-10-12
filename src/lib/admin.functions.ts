@@ -96,14 +96,14 @@ export const ulozitRadek = createServerFn({ method: "POST" })
       }
     }
 
-    if (!data.id && definice.sloupce.includes("poradi") && udaje.poradi === undefined) {
+    if (!data.id && definice.sloupce.includes("poradi") && udaje["poradi"] === undefined) {
       const { data: posledni } = await db
         .from(definice.tabela)
         .select("poradi")
         .order("poradi", { ascending: false })
         .limit(1)
         .maybeSingle();
-      udaje.poradi = Number(posledni?.poradi ?? 0) + 10;
+      udaje["poradi"] = Number(posledni?.["poradi"] ?? 0) + 10;
     }
 
     let vysledek;
