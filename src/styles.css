@@ -162,4 +162,4 @@
 }
 
 @keyframes padat { from { transform: translateY(-10vh) rotate(0deg); } to { transform: translateY(110vh) rotate(360deg); } }
-.padajici { position: absolute; top: 0; animation: padat 2.8s ease-in forwards; opacity: 1; }
+.padajici { position: absolute; top: 0; display: block; filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35)); animation: padat 2.8s ease-in forwards; opacity: 1; }
