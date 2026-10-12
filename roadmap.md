@@ -7,6 +7,6 @@
 - [ ] Víkendové speciality (čeká na údaje od majitele)
 - [x] Pravidelné akce: šipky 301 single out cca 1× za měsíc, třídní srazy, narozeniny, pohřební hostiny, konference (doplněno 12. 10. 2026)
 - [ ] Konkrétní termíny nejbližších šipkových turnajů (čeká na údaje od majitele)
-- [ ] Fotky do galerie (majitel je pošle do chatu)
+- [ ] Fotky do galerie – majitel je pošle do chatu (+ doplnit, kde všude mají být: jen galerie / i nahoře / i vlevo / i k oslavám)
 - [ ] Nápoje a ceny pití – až později, zatím ne
 - [ ] Zkontrolovat web a případně spustit do sítě
