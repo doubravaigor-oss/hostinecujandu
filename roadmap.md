@@ -12,3 +12,5 @@
 - [x] Popisky jídel: utopenec, tousty, hermelín, pizza, Ďábelská topinka (doplněno 12. 10. 2026)
 - [ ] Popisek Táboráčku (čeká na údaje od majitele)
 - [ ] Vlastní adresa www.hostinecujandu.cz – vyžaduje placený tarif a pořízení domény (zeptal se 12. 10. 2026)
+- [x] Výhra v automatu: sypou se velké buřty a hermelín malované lidovým stylem (doplněno 12. 10. 2026)
+- [ ] Administrace na adrese /admin – čeká na potvrzení „ano admin“
