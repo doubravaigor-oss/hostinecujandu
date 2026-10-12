@@ -30,7 +30,7 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
     kategorie: "K jídlu",
     polozky: [
       { nazev: "Petrovický utopenec s chlebem", cena: "75 Kč", popis: "★ Legenda k pivu! Pikantní buřt plněný okurkou, paprikou a feferonkou, naložený s cibulí v octovém nálevu. Pro ty, co mají rádi pořádně od plic." },
-      { nazev: "Vinárníkovy tousty", cena: "85 Kč" },
+      { nazev: "Vinárníkovy tousty", cena: "85 Kč", popis: "★ Receptura od vinárníka Mirka až z pražských Kobylis. Toust bohatě naplněný – tři omáčky, beraní rohy a nic se tu nešetří. Takové ty tousty, co se v pražských vinárnách jedly ke sklenici a u nás zůstaly." },
       { nazev: "Nakládaný hermelín", cena: "90 Kč", popis: "★ Česká hospodská klasika. Naložený hermelín – s chlebem a vychlazeným pivem nemá konkurenci." },
       { nazev: "Ďábelská topinka", cena: "90 Kč" },
       { nazev: "Pizza della casa", cena: "165 Kč", popis: "★ Pizza od pražské rodinné firmy Pizza Della Casa – tradiční italská receptura a kvalitní suroviny. Rovnou k pivu." },
