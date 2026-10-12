@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
 import { Hodnoceni } from "@/components/Hodnoceni";
+import { StiraciLos } from "@/components/StiraciLos";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
 
