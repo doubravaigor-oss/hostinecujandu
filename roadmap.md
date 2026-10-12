@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [ ] HODNĚ DŮLEŽITÉ: opravit rozbitý styl (chyba v CSS od nového pásku a plakety)
+
 - [x] Jídelní lístek: jídla a ceny (doplněno 12. 10. 2026)
 - [ ] Víkendové speciality (čeká na údaje od majitele)
 - [x] Pravidelné akce: šipky 301 single out cca 1× za měsíc, třídní srazy, narozeniny, pohřební hostiny, konference (doplněno 12. 10. 2026)
