@@ -10,3 +10,4 @@
 - [ ] Fotky do galerie – majitel je pošle do chatu (+ doplnit, kde všude mají být: jen galerie / i nahoře / i vlevo / i k oslavám)
 - [ ] Nápoje a ceny pití – až později, zatím ne
 - [ ] Zkontrolovat web a případně spustit do sítě
+- [ ] Popisky jídel: Ďábelská topinka a Táboráček zatím bez popisku (čeká na údaje od majitele)
