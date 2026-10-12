@@ -110,7 +110,7 @@ export function Automat() {
                 {v.map((s, r) => (
                   <div
                     key={r}
-                    className="flex h-7 items-center justify-center text-[8px] font-bold leading-none"
+                    className="flex h-7 items-center justify-center text-[6.5px] font-bold leading-none tracking-tighter"
                     style={{
                       opacity: r === 1 ? 1 : 0.45,
                       filter: !stoji[i] ? "blur(1px)" : undefined,
