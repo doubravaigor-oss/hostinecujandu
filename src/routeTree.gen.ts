@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AktualneRouteImport } from './routes/aktualne'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as HraRouteImport } from './routes/hra'
 import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
@@ -48,6 +49,11 @@ const AuthRoute = AuthRouteImport.update({
 const GalerieRoute = GalerieRouteImport.update({
   id: '/galerie',
   path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HraRoute = HraRouteImport.update({
+  id: '/hra',
+  path: '/hra',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JidloRoute = JidloRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/aktualne': typeof AktualneRoute
   '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
+  '/hra': typeof HraRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/aktualne': typeof AktualneRoute
   '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
+  '/hra': typeof HraRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/aktualne': typeof AktualneRoute
   '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
+  '/hra': typeof HraRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/aktualne'
     | '/auth'
     | '/galerie'
+    | '/hra'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/aktualne'
     | '/auth'
     | '/galerie'
+    | '/hra'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/aktualne'
     | '/auth'
     | '/galerie'
+    | '/hra'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
@@ -219,6 +231,7 @@ export interface RootRouteChildren {
   AktualneRoute: typeof AktualneRoute
   AuthRoute: typeof AuthRoute
   GalerieRoute: typeof GalerieRoute
+  HraRoute: typeof HraRoute
   JidloRoute: typeof JidloRoute
   KontaktRoute: typeof KontaktRoute
   OslavyRoute: typeof OslavyRoute
@@ -260,6 +273,13 @@ declare module '@tanstack/react-router' {
       path: '/galerie'
       fullPath: '/galerie'
       preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hra': {
+      id: '/hra'
+      path: '/hra'
+      fullPath: '/hra'
+      preLoaderRoute: typeof HraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/jidlo': {
@@ -380,6 +400,7 @@ const rootRouteChildren: RootRouteChildren = {
   AktualneRoute: AktualneRoute,
   AuthRoute: AuthRoute,
   GalerieRoute: GalerieRoute,
+  HraRoute: HraRoute,
   JidloRoute: JidloRoute,
   KontaktRoute: KontaktRoute,
   OslavyRoute: OslavyRoute,
