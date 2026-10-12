@@ -24,16 +24,16 @@ export const oteviraciDoba: { den: string; cas: string }[] = [
   { den: "Neděle", cas: "17:00 – 22:00" },
 ];
 
-export type Polozka = { nazev: string; cena: string };
+export type Polozka = { nazev: string; cena: string; popis?: string };
 export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   {
     kategorie: "K jídlu",
     polozky: [
-      { nazev: "Utopenec s chlebem", cena: "75 Kč" },
+      { nazev: "Petrovický utopenec s chlebem", cena: "75 Kč", popis: "★ Legenda k pivu! Pikantní buřt plněný okurkou, paprikou a feferonkou, naložený s cibulí v octovém nálevu. Pro ty, co mají rádi pořádně od plic." },
       { nazev: "Vinárníkovy tousty", cena: "85 Kč" },
-      { nazev: "Nakládaný hermelín", cena: "90 Kč" },
+      { nazev: "Nakládaný hermelín", cena: "90 Kč", popis: "★ Česká hospodská klasika. Zralý hermelín v oleji s kořením a cibulkou – s chlebem a vychlazeným pivem nemá konkurenci." },
       { nazev: "Ďábelská topinka", cena: "90 Kč" },
-      { nazev: "Pizza della casa", cena: "165 Kč" },
+      { nazev: "Pizza della casa", cena: "165 Kč", popis: "★ Žádná placka z krabice! Pizza od pražské rodinné firmy Pizza Della Casa – tradiční receptura a kvalitní suroviny. U nás ji dopečete k pivu." },
       { nazev: "Táboráček", cena: "50 Kč" },
     ],
   },
