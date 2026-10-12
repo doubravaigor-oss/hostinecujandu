@@ -30,7 +30,6 @@ function Jidlo() {
           )}
         </div>
       ))}
-      <p className="text-xs text-muted-foreground">Ceny jsou uvedeny v Kč.</p>
     </Box>
   );
 }
