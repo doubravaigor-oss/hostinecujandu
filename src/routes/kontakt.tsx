@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
+import { Hodnoceni } from "@/components/Hodnoceni";
 import { kontakt } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 import { obsahQuery } from "@/lib/obsah.functions";
-import qrHodnoceni from "@/assets/qr-hodnoceni.png";
 
 export const Route = createFileRoute("/kontakt")({
   head: () =>
@@ -77,50 +77,7 @@ function Kontakt() {
         </a>
       </div>
 
-      <div className="frame paper mb-3 p-3">
-        <div className="retro-heading -mx-3 -mt-3 mb-3 text-sm">★ Napište nám hodnocení ★</div>
-        <table className="w-full">
-          <tbody>
-            <tr>
-              <td className="w-[130px] pr-3 align-top">
-                <img
-                  src={qrHodnoceni}
-                  alt="QR kód pro napsání hodnocení na Mapách Google"
-                  className="frame w-full bg-white p-1"
-                />
-              </td>
-              <td className="align-top text-sm">
-                <p className="font-bold">Byli jste u nás? Dejte o nás vědět.</p>
-                <p className="mt-1">
-                  Namiřte foťák telefonu na tento QR kód – otevře se okno pro hodnocení na Mapách
-                  Google. Zabere to půl minuty a nám to pomůže víc než sebelepší reklama.
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <a
-                    href={kontakt.hodnoceni}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="retro-btn-big"
-                  >
-                    ★ Napsat hodnocení
-                  </a>
-                  <a
-                    href={kontakt.hodnoceniMisto}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="retro-btn-big"
-                  >
-                    ➜ Ukázat na mapě
-                  </a>
-                </div>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  Hodnocení se odesílá z vašeho účtu Google. Děkujeme a těšíme se na viděnou!
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <Hodnoceni />
 
       <iframe
         title="Mapa Nadějkova"

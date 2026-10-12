@@ -84,7 +84,7 @@ function VerejnaCast({ children }: { children: ReactNode }) {
       <div className="pod-konstrukci mt-1 text-xs">{texty.banner}</div>
 
       <div className="mt-2 grid gap-2 md:grid-cols-[180px_minmax(0,1fr)]">
-        <aside className="space-y-2">
+        <aside className="order-2 space-y-2 md:order-1">
           <nav className="frame paper p-2">
             <div className="retro-heading -mx-2 -mt-2 mb-2 text-sm">» MENU «</div>
             <ul className="grid grid-cols-2 gap-1 md:grid-cols-1">
@@ -126,7 +126,7 @@ function VerejnaCast({ children }: { children: ReactNode }) {
           </div>
           <Automat />
         </aside>
-        <main className="min-w-0">{children}</main>
+        <main className="order-1 min-w-0 md:order-2">{children}</main>
       </div>
 
       <hr className="hr-retro my-2" />

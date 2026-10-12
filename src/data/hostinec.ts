@@ -208,3 +208,14 @@ export const pronajemProstor: string[] = [
   "Pohoštění i rozsah akce řešíme vždy individuálně – nabídku děláme na míru",
   "Parkování přímo před objektem",
 ];
+
+// Rámeček s QR kódem na hodnocení na Googlu (zobrazuje se na Úvodu i v Kontaktu)
+export const hodnoceniText = {
+  nadpis: "★ Napište nám hodnocení ★",
+  hlavni: "Byli jste u nás? Dejte o nás vědět.",
+  napoveda:
+    "Namiřte foťák telefonu na tento QR kód – otevře se okno pro hodnocení na Mapách Google. Zabere to půl minuty a nám to pomůže víc než sebelepší reklama.",
+  tlacitko: "★ Napsat hodnocení",
+  mapa: "➜ Ukázat na mapě",
+  poznamka: "Hodnocení se odesílá z vašeho účtu Google. Děkujeme a těšíme se na viděnou!",
+};
