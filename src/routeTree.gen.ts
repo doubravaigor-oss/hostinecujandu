@@ -10,33 +10,90 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AktualneRouteImport } from './routes/aktualne'
+import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as JidloRouteImport } from './routes/jidlo'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as OslavyRouteImport } from './routes/oslavy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktualneRoute = AktualneRouteImport.update({
+  id: '/aktualne',
+  path: '/aktualne',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieRoute = GalerieRouteImport.update({
+  id: '/galerie',
+  path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JidloRoute = JidloRouteImport.update({
+  id: '/jidlo',
+  path: '/jidlo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OslavyRoute = OslavyRouteImport.update({
+  id: '/oslavy',
+  path: '/oslavy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aktualne': typeof AktualneRoute
+  '/galerie': typeof GalerieRoute
+  '/jidlo': typeof JidloRoute
+  '/kontakt': typeof KontaktRoute
+  '/oslavy': typeof OslavyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aktualne': typeof AktualneRoute
+  '/galerie': typeof GalerieRoute
+  '/jidlo': typeof JidloRoute
+  '/kontakt': typeof KontaktRoute
+  '/oslavy': typeof OslavyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aktualne': typeof AktualneRoute
+  '/galerie': typeof GalerieRoute
+  '/jidlo': typeof JidloRoute
+  '/kontakt': typeof KontaktRoute
+  '/oslavy': typeof OslavyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
+  id:
+    | '__root__'
+    | '/'
+    | '/aktualne'
+    | '/galerie'
+    | '/jidlo'
+    | '/kontakt'
+    | '/oslavy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AktualneRoute: typeof AktualneRoute
+  GalerieRoute: typeof GalerieRoute
+  JidloRoute: typeof JidloRoute
+  KontaktRoute: typeof KontaktRoute
+  OslavyRoute: typeof OslavyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +105,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktualne': {
+      id: '/aktualne'
+      path: '/aktualne'
+      fullPath: '/aktualne'
+      preLoaderRoute: typeof AktualneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie': {
+      id: '/galerie'
+      path: '/galerie'
+      fullPath: '/galerie'
+      preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jidlo': {
+      id: '/jidlo'
+      path: '/jidlo'
+      fullPath: '/jidlo'
+      preLoaderRoute: typeof JidloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oslavy': {
+      id: '/oslavy'
+      path: '/oslavy'
+      fullPath: '/oslavy'
+      preLoaderRoute: typeof OslavyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AktualneRoute: AktualneRoute,
+  GalerieRoute: GalerieRoute,
+  JidloRoute: JidloRoute,
+  KontaktRoute: KontaktRoute,
+  OslavyRoute: OslavyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
