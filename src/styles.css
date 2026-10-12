@@ -111,7 +111,7 @@
 @keyframes marquee { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 @utility marquee-text { display: inline-block; white-space: nowrap; animation: marquee 18s linear infinite; }
 
-// Malé retro plakety v patičce (styl 88×31 tlačítek z starých webů)
+/* Malé retro plakety v patičce (styl 88x31 tlacitek z starych webu) */
 @utility retro-badge {
   display: inline-block;
   padding: 3px 7px;
@@ -128,7 +128,7 @@
   text-decoration: none !important;
 }
 
-// Barevný pásek "ještě se buduje" – jedoucí šikmé pruhy
+/* Barevny pasek "jeste se buduje" - jedouci sikme pruhy */
 @keyframes stripes { from { background-position: 0 0; } to { background-position: 22.6px 0; } }
 @utility pod-konstrukci {
   position: relative;
@@ -139,16 +139,24 @@
   text-align: center;
   border: 1px solid var(--border);
   padding: 9px 8px 10px;
-  &:before,
-  &:after {
+  &:before {
     content: "";
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     height: 6px;
     background-image: repeating-linear-gradient(45deg, var(--wood) 0 8px, oklch(0 0 0 / 0.75) 8px 16px);
     animation: stripes 1.2s linear infinite;
   }
-  &:before { top: 0; }
-  &:after { bottom: 0; }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-image: repeating-linear-gradient(45deg, var(--wood) 0 8px, oklch(0 0 0 / 0.75) 8px 16px);
+    animation: stripes 1.2s linear infinite;
+  }
 }
