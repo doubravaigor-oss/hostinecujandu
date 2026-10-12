@@ -1,4 +1,14 @@
 import rizekFoto from "@/assets/rizek.jpg.asset.json";
+import f1 from "@/assets/foto1.jpg.asset.json";
+import f2 from "@/assets/foto2.jpg.asset.json";
+import f3 from "@/assets/foto3.jpg.asset.json";
+import f4 from "@/assets/foto4.jpg.asset.json";
+import f5 from "@/assets/foto5.jpg.asset.json";
+import f6 from "@/assets/foto6.jpg.asset.json";
+import f7 from "@/assets/foto7.jpg.asset.json";
+import f8 from "@/assets/foto8.jpg.asset.json";
+import f9 from "@/assets/foto9.jpg.asset.json";
+import f10 from "@/assets/foto10.jpg.asset.json";
 // ================================================================
 //  VŠECHNY TEXTY WEBU NA JEDNOM MÍSTĚ
 //  Změny (jídelníček, akce, otevírací doba…) se dělají jen zde.
@@ -111,4 +121,22 @@ export const aktuality: { datum: string; nadpis: string; text: string; nove?: bo
 // Fotky: přidávají se sem (src = adresa obrázku, popis = text pod fotkou)
 export const fotky: { src: string; popis: string }[] = [
   { src: rizekFoto.url, popis: "Řízky s bramborovým salátem" },
+  { src: f4.url, popis: "Velký sál připravený na hostinu" },
+  { src: f7.url, popis: "Salonek prostřený pro hosty" },
+  { src: f5.url, popis: "Snídaně / brunch hotelového typu" },
+  { src: f2.url, popis: "Studené mísy na raut" },
+  { src: f8.url, popis: "Řízky a salát na raut" },
+  { src: f3.url, popis: "Obložené chlebíčky" },
+  { src: f9.url, popis: "Snídaně s proseccem" },
+  { src: f1.url, popis: "Uzené, klobása, knedlík a zelí" },
+  { src: f10.url, popis: "Ďábelská topinka" },
+  { src: f6.url, popis: "Prostřený stůl" },
+];
+
+// Firmy a konference (fakta od majitele: sál 100–150, salonek 20, hospoda 70, Parkhotel Mozolov 3 km)
+export const proFirmy: string[] = [
+  "Sál pro 100–150 osob, salonek pro 20 osob, hospoda pro 70 osob",
+  "Ubytování v Parkhotelu Mozolov – jen 3 km od nás",
+  "Coffee break, oběd, raut i snídaně / brunch hotelového typu",
+  "Klidné venkovské prostředí – ideální na školení, porady a teambuilding",
 ];
