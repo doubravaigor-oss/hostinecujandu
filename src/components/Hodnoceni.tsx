@@ -2,7 +2,7 @@ import { hodnoceniText, kontakt } from "@/data/hostinec";
 import qrHodnoceni from "@/assets/qr-hodnoceni.png";
 
 // Rámeček s QR kódem na hodnocení na Googlu – používá se na Úvodu i v Kontaktu.
-export function Hodnoceni({ sirkaQR = 130 }: { sirkaQR?: number }) {
+export function Hodnoceni({ sirkaQR = 150 }: { sirkaQR?: number }) {
   return (
     <section className="frame paper mb-3 p-3">
       <div className="retro-heading -mx-3 -mt-3 mb-3 text-sm">{hodnoceniText.nadpis}</div>
@@ -13,7 +13,8 @@ export function Hodnoceni({ sirkaQR = 130 }: { sirkaQR?: number }) {
               <img
                 src={qrHodnoceni}
                 alt="QR kód pro napsání hodnocení na Mapách Google"
-                className="frame w-full bg-white p-1"
+                className="frame bg-white p-1"
+                style={{ width: sirkaQR, minWidth: sirkaQR, maxWidth: sirkaQR }}
               />
             </td>
             <td className="align-top text-sm">
