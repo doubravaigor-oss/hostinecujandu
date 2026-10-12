@@ -122,7 +122,7 @@ export const aktuality: { datum: string; nadpis: string; text: string; nove?: bo
 export const fotky: { src: string; popis: string }[] = [
   { src: rizekFoto.url, popis: "Řízky s bramborovým salátem" },
   { src: f4.url, popis: "Velký sál připravený na hostinu" },
-  { src: f7.url, popis: "Salonek prostřený pro hosty" },
+  { src: f7.url, popis: "Hostinec prostřený pro hosty" },
   { src: f5.url, popis: "Snídaně / brunch hotelového typu" },
   { src: f2.url, popis: "Studené mísy na raut" },
   { src: f8.url, popis: "Řízky a salát na raut" },
