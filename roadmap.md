@@ -6,7 +6,7 @@
 - [x] Jídelní lístek: jídla a ceny (doplněno 12. 10. 2026)
 - [x] Pravidelné akce: šipky 301 single out cca 1× za měsíc, třídní srazy, narozeniny, pohřební hostiny, konference (doplněno 12. 10. 2026)
 - [ ] Konkrétní termíny nejbližších šipkových turnajů (čeká na údaje od majitele)
-- [ ] Fotky do galerie – majitel je pošle do chatu (+ doplnit, kde všude mají být: jen galerie / i nahoře / i vlevo / i k oslavám)
+- [x] Fotky do galerie – 10 fotek s popisky (doplněno 12. 10. 2026)
 - [x] Nápoje doplněny z PDF (12. 10. 2026)
 - [ ] Zkontrolovat web a případně spustit do sítě
 - [x] Popisky jídel: utopenec, tousty, hermelín, pizza, Ďábelská topinka (doplněno 12. 10. 2026)
