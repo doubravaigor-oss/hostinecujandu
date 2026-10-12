@@ -61,7 +61,7 @@ export function Automat() {
             Array.from({ length: 26 }, (_, i) => ({
               id: i,
               img: nahodnyObr(),
-              vel: 54 + Math.round(Math.random() * 74),
+              vel: 70 + Math.round(Math.random() * 90),
               left: Math.random() * 86,
               delay: Math.random() * 1.3,
               trv: 2.3 + Math.random() * 1.3,
