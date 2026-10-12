@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { Automat } from "@/components/Automat";
 import { kontakt, oteviraciDoba, plakety, stavWebu } from "@/data/hostinec";
 
 const menu = [
@@ -71,6 +72,7 @@ export function Layout({ children }: { children: ReactNode }) {
               </tbody>
             </table>
           </div>
+          <Automat />
         </aside>
         <main className="min-w-0">{children}</main>
       </div>
