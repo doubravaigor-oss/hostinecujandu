@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
+import { Hodnoceni } from "@/components/Hodnoceni";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
 
@@ -34,6 +35,7 @@ function Index() {
           Pravidelně máme otevřeno v <b>pátek, sobotu a neděli</b> vždy od <b>17:00 do 22:00</b>.
         </p>
       </Box>
+      <Hodnoceni sirkaQR={112} />
       <section className="frame mb-3 bg-wood p-3 text-beer">
         <h2 className="text-2xl" style={{ color: "var(--beer)" }}>
           ★ Oslavy, rauty a hostiny ★
