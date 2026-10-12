@@ -79,6 +79,11 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="frame paper p-2 text-center text-xs">
         <b>{kontakt.nazev}</b> · {kontakt.adresa}, {kontakt.obec}, {kontakt.okres} · tel.{" "}
         <a href={kontakt.telefonOdkaz}>{kontakt.telefon}</a>
+        {kontakt.email && (
+          <div className="mt-1">
+            <a href={`mailto:${kontakt.email}`}>Napište nám e-mail: {kontakt.email}</a>
+          </div>
+        )}
         {kontakt.facebook && (
           <div className="mt-1">
             <a href={kontakt.facebook} target="_blank" rel="noreferrer">Na Facebooku »</a>
