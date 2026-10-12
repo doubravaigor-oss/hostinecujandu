@@ -24,7 +24,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto max-w-[900px] p-1 sm:p-3">
       <header className="frame paper p-2 text-center">
-        <div className="text-xs text-muted-foreground">🍺 vítejte na oficiálních stránkách 🍺</div>
+        <div className="text-xs text-muted-foreground">★ vítejte na oficiálních stránkách ★</div>
         <h1 className="text-2xl sm:text-4xl" style={{ textShadow: "2px 2px 0 var(--beer)" }}>
           HOSTINEC U JANDŮ – NADĚJKOV
         </h1>
@@ -39,7 +39,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </header>
 
       <div className="frame mt-1 overflow-hidden bg-wood py-0.5 text-sm font-bold text-beer">
-        <span className="marquee-text">*** Otevřeno pátek – sobota – neděle *** Oslavy, svatby, rauty, firemní akce *** Volejte {kontakt.telefon} ***</span>
+        <span className="marquee-text">*** Otevřeno pátek – sobota – neděle 17:00–22:00 *** Oslavy, svatby, rauty, firemní akce *** Volejte {kontakt.telefon} ***</span>
       </div>
 
       <div className="mt-2 grid gap-2 md:grid-cols-[180px_minmax(0,1fr)]">
@@ -75,9 +75,14 @@ export function Layout({ children }: { children: ReactNode }) {
 
       <hr className="hr-retro my-2" />
       <footer className="frame paper p-2 text-center text-xs">
-        <b>{kontakt.nazev}</b> · {kontakt.obec}, {kontakt.okres} · tel.{" "}
+        <b>{kontakt.nazev}</b> · {kontakt.adresa}, {kontakt.obec}, {kontakt.okres} · tel.{" "}
         <a href={kontakt.telefonOdkaz}>{kontakt.telefon}</a>
-        <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči 😉 · Na zdraví!</div>
+        {kontakt.facebook && (
+          <div className="mt-1">
+            <a href={kontakt.facebook} target="_blank" rel="noreferrer">Na Facebooku »</a>
+          </div>
+        )}
+        <div className="mt-1 text-muted-foreground">Stránky nejlépe zobrazíte v jakémkoliv prohlížeči :-) · Na zdraví!</div>
       </footer>
     </div>
   );

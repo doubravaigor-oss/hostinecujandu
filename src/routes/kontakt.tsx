@@ -14,9 +14,9 @@ function Kontakt() {
       <table className="mb-3">
         <tbody>
           <tr><td className="pr-3 font-bold">Název:</td><td>{kontakt.nazev}</td></tr>
-          <tr><td className="pr-3 font-bold">Adresa:</td><td>{kontakt.adresa}, {kontakt.okres}</td></tr>
+          <tr><td className="pr-3 font-bold">Adresa:</td><td>{kontakt.adresa}, {kontakt.obec} ({kontakt.okres})</td></tr>
           <tr><td className="pr-3 font-bold">Telefon:</td><td><a href={kontakt.telefonOdkaz}>{kontakt.telefon}</a></td></tr>
-          <tr><td className="pr-3 font-bold">Facebook:</td><td>{kontakt.facebook ? <a href={kontakt.facebook}>Hostinec U Jandů</a> : "odkaz brzy doplníme"}</td></tr>
+          <tr><td className="pr-3 font-bold">Facebook:</td><td>{kontakt.facebook ? <a href={kontakt.facebook} target="_blank" rel="noreferrer">Hostinec U Jandů na Facebooku</a> : "odkaz brzy doplníme"}</td></tr>
         </tbody>
       </table>
       <div className="mb-3 flex flex-wrap gap-2">
