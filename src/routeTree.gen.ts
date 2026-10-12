@@ -10,20 +10,39 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AktualneRouteImport } from './routes/aktualne'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminAkceRouteImport } from './routes/_authenticated/admin.akce'
+import { Route as AuthenticatedAdminFotkyRouteImport } from './routes/_authenticated/admin.fotky'
+import { Route as AuthenticatedAdminHodinyRouteImport } from './routes/_authenticated/admin.hodiny'
+import { Route as AuthenticatedAdminJidloRouteImport } from './routes/_authenticated/admin.jidlo'
+import { Route as AuthenticatedAdminTextyRouteImport } from './routes/_authenticated/admin.texty'
+import { Route as ApiPublicFotkaIdRouteImport } from './routes/api/public/fotka/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AktualneRoute = AktualneRouteImport.update({
   id: '/aktualne',
   path: '/aktualne',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalerieRoute = GalerieRouteImport.update({
@@ -46,54 +65,164 @@ const OslavyRoute = OslavyRouteImport.update({
   path: '/oslavy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminAkceRoute = AuthenticatedAdminAkceRouteImport.update({
+  id: '/akce',
+  path: '/akce',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminFotkyRoute = AuthenticatedAdminFotkyRouteImport.update({
+  id: '/fotky',
+  path: '/fotky',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminHodinyRoute =
+  AuthenticatedAdminHodinyRouteImport.update({
+    id: '/hodiny',
+    path: '/hodiny',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminJidloRoute = AuthenticatedAdminJidloRouteImport.update({
+  id: '/jidlo',
+  path: '/jidlo',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminTextyRoute = AuthenticatedAdminTextyRouteImport.update({
+  id: '/texty',
+  path: '/texty',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const ApiPublicFotkaIdRoute = ApiPublicFotkaIdRouteImport.update({
+  id: '/api/public/fotka/$id',
+  path: '/api/public/fotka/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/admin/akce': typeof AuthenticatedAdminAkceRoute
+  '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
+  '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin/akce': typeof AuthenticatedAdminAkceRoute
+  '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
+  '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/aktualne': typeof AktualneRoute
+  '/auth': typeof AuthRoute
   '/galerie': typeof GalerieRoute
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/_authenticated/admin/akce': typeof AuthenticatedAdminAkceRoute
+  '/_authenticated/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/_authenticated/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
+  '/_authenticated/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/_authenticated/admin/texty': typeof AuthenticatedAdminTextyRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aktualne' | '/galerie' | '/jidlo' | '/kontakt' | '/oslavy'
-  id:
-    | '__root__'
+  fullPaths:
     | '/'
     | '/aktualne'
+    | '/auth'
     | '/galerie'
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/admin'
+    | '/admin/akce'
+    | '/admin/fotky'
+    | '/admin/hodiny'
+    | '/admin/jidlo'
+    | '/admin/texty'
+    | '/admin/'
+    | '/api/public/fotka/$id'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/aktualne'
+    | '/auth'
+    | '/galerie'
+    | '/jidlo'
+    | '/kontakt'
+    | '/oslavy'
+    | '/admin/akce'
+    | '/admin/fotky'
+    | '/admin/hodiny'
+    | '/admin/jidlo'
+    | '/admin/texty'
+    | '/admin'
+    | '/api/public/fotka/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/aktualne'
+    | '/auth'
+    | '/galerie'
+    | '/jidlo'
+    | '/kontakt'
+    | '/oslavy'
+    | '/_authenticated/admin'
+    | '/_authenticated/admin/akce'
+    | '/_authenticated/admin/fotky'
+    | '/_authenticated/admin/hodiny'
+    | '/_authenticated/admin/jidlo'
+    | '/_authenticated/admin/texty'
+    | '/_authenticated/admin/'
+    | '/api/public/fotka/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AktualneRoute: typeof AktualneRoute
+  AuthRoute: typeof AuthRoute
   GalerieRoute: typeof GalerieRoute
   JidloRoute: typeof JidloRoute
   KontaktRoute: typeof KontaktRoute
   OslavyRoute: typeof OslavyRoute
+  ApiPublicFotkaIdRoute: typeof ApiPublicFotkaIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -105,11 +234,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aktualne': {
       id: '/aktualne'
       path: '/aktualne'
       fullPath: '/aktualne'
       preLoaderRoute: typeof AktualneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galerie': {
@@ -140,16 +283,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OslavyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/akce': {
+      id: '/_authenticated/admin/akce'
+      path: '/akce'
+      fullPath: '/admin/akce'
+      preLoaderRoute: typeof AuthenticatedAdminAkceRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/fotky': {
+      id: '/_authenticated/admin/fotky'
+      path: '/fotky'
+      fullPath: '/admin/fotky'
+      preLoaderRoute: typeof AuthenticatedAdminFotkyRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/hodiny': {
+      id: '/_authenticated/admin/hodiny'
+      path: '/hodiny'
+      fullPath: '/admin/hodiny'
+      preLoaderRoute: typeof AuthenticatedAdminHodinyRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/jidlo': {
+      id: '/_authenticated/admin/jidlo'
+      path: '/jidlo'
+      fullPath: '/admin/jidlo'
+      preLoaderRoute: typeof AuthenticatedAdminJidloRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/texty': {
+      id: '/_authenticated/admin/texty'
+      path: '/texty'
+      fullPath: '/admin/texty'
+      preLoaderRoute: typeof AuthenticatedAdminTextyRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/api/public/fotka/$id': {
+      id: '/api/public/fotka/$id'
+      path: '/api/public/fotka/$id'
+      fullPath: '/api/public/fotka/$id'
+      preLoaderRoute: typeof ApiPublicFotkaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminAkceRoute: typeof AuthenticatedAdminAkceRoute
+  AuthenticatedAdminFotkyRoute: typeof AuthenticatedAdminFotkyRoute
+  AuthenticatedAdminHodinyRoute: typeof AuthenticatedAdminHodinyRoute
+  AuthenticatedAdminJidloRoute: typeof AuthenticatedAdminJidloRoute
+  AuthenticatedAdminTextyRoute: typeof AuthenticatedAdminTextyRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+}
+
+const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminAkceRoute: AuthenticatedAdminAkceRoute,
+  AuthenticatedAdminFotkyRoute: AuthenticatedAdminFotkyRoute,
+  AuthenticatedAdminHodinyRoute: AuthenticatedAdminHodinyRoute,
+  AuthenticatedAdminJidloRoute: AuthenticatedAdminJidloRoute,
+  AuthenticatedAdminTextyRoute: AuthenticatedAdminTextyRoute,
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+}
+
+const AuthenticatedAdminRouteWithChildren =
+  AuthenticatedAdminRoute._addFileChildren(AuthenticatedAdminRouteChildren)
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AktualneRoute: AktualneRoute,
+  AuthRoute: AuthRoute,
   GalerieRoute: GalerieRoute,
   JidloRoute: JidloRoute,
   KontaktRoute: KontaktRoute,
   OslavyRoute: OslavyRoute,
+  ApiPublicFotkaIdRoute: ApiPublicFotkaIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

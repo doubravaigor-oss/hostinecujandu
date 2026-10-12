@@ -9,10 +9,14 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/Layout";
+import { obsahQuery, hodinyObsah, type Obsah } from "@/lib/obsah.functions";
+import { oteviraciDoba } from "@/data/hostinec";
+import { supabase } from "@/integrations/supabase/client";
 
 function NotFoundComponent() {
   return (
@@ -74,32 +78,71 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BarOrPub",
-  name: "Hostinec U Jandů",
-  telephone: "+420732350877",
-  servesCuisine: "Česká hospodská kuchyně",
-  sameAs: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Náměstí Prokopa Chocholouška 18",
-    addressLocality: "Nadějkov",
-    addressRegion: "Jihočeský kraj",
-    addressCountry: "CZ",
-  },
-  openingHoursSpecification: [
-    {
+// ==== Informace pro Google (kartička s adresou, telefonem a hodinami) ====
+const CZ_DNY: Record<string, string> = {
+  "pondělí": "Monday",
+  "úterý": "Tuesday",
+  "středa": "Wednesday",
+  "čtvrtek": "Thursday",
+  "pátek": "Friday",
+  "sobota": "Saturday",
+  "neděle": "Sunday",
+};
+
+function oteviraciProGoogle(hodiny: { den: string; cas: string }[]) {
+  const specifikace: {
+    "@type": string;
+    dayOfWeek: string[];
+    opens: string;
+    closes: string;
+  }[] = [];
+  for (const h of hodiny) {
+    if (/zav[řr]eno/i.test(h.cas)) continue;
+    const cas = h.cas.match(/(\d{1,2}):(\d{2}).*?(\d{1,2}):(\d{2})/);
+    if (!cas) continue;
+    const dny = h.den
+      .split(/[–-]/)
+      .map((d) => CZ_DNY[d.trim().toLowerCase()])
+      .filter((d): d is string => Boolean(d));
+    if (!dny.length) continue;
+    const od = cas[1] ?? "0";
+    const doHodnoty = cas[3] ?? "0";
+    specifikace.push({
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Friday", "Saturday", "Sunday"],
-      opens: "17:00",
-      closes: "22:00",
+      dayOfWeek: dny,
+      opens: `${od.padStart(2, "0")}:${cas[2] ?? "00"}`,
+      closes: `${doHodnoty.padStart(2, "0")}:${cas[4] ?? "00"}`,
+    });
+  }
+  return specifikace;
+}
+
+function karticka(obsah: Obsah | undefined) {
+  const hodiny = obsah ? hodinyObsah(obsah) : oteviraciDoba;
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    name: "Hostinec U Jandů",
+    telephone: "+420732350877",
+    servesCuisine: "Česká hospodská kuchyně",
+    sameAs: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Náměstí Prokopa Chocholouška 18",
+      addressLocality: "Nadějkov",
+      addressRegion: "Jihočeský kraj",
+      addressCountry: "CZ",
     },
-  ],
-});
+    openingHoursSpecification: oteviraciProGoogle(hodiny),
+  });
+}
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  loader: async ({ context }) => {
+    const obsah = await context.queryClient.ensureQueryData(obsahQuery);
+    return { obsah };
+  },
+  head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -110,7 +153,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-    scripts: [{ type: "application/ld+json", children: jsonLd }],
+    scripts: [{ type: "application/ld+json", children: karticka(loaderData?.obsah) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -134,12 +177,23 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
+      router.invalidate();
+      if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
+    });
+    return () => data.subscription.unsubscribe();
+  }, [queryClient, router]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>
         <Outlet />
       </Layout>
+      <Toaster />
     </QueryClientProvider>
   );
 }

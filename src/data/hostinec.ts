@@ -197,3 +197,11 @@ export const proFirmy: string[] = [
   "Coffee break, oběd, raut i snídaně / brunch hotelového typu",
   "Klidné venkovské prostředí – ideální na školení, porady a teambuilding",
 ];
+
+// Pronájem prostor pro soukromé akce (zadáno majitelem – přepisovat doslova)
+export const pronajemProstor: string[] = [
+  "Prostor na vaši vlastní soukromou akci – oslava, setkání i rodinná slavnost",
+  "Hospoda pro 70 osob, sál pro 100–150 osob, salonek pro 20 osob",
+  "Pohoštění i rozsah akce řešíme vždy individuálně – nabídku děláme na míru",
+  "Parkování přímo před objektem",
+];
