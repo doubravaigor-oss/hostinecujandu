@@ -19,7 +19,7 @@ function Index() {
           <li>víkendové speciality</li>
           <li>společenské posezení</li>
         </ul>
-        <p className="mt-2">Pravidelně máme otevřeno v <b>pátek, sobotu a neděli</b>.</p>
+        <p className="mt-2">Pravidelně máme otevřeno v <b>pátek, sobotu a neděli</b> vždy od <b>17:00 do 22:00</b>.</p>
       </Box>
       <section className="frame mb-3 bg-wood p-3 text-beer">
         <h2 className="text-2xl" style={{ color: "var(--beer)" }}>★ Oslavy, rauty a hostiny ★</h2>

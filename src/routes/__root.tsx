@@ -80,7 +80,22 @@ const jsonLd = JSON.stringify({
   name: "Hostinec U Jandů",
   telephone: "+420732350877",
   servesCuisine: "Česká hospodská kuchyně",
-  address: { "@type": "PostalAddress", addressLocality: "Nadějkov", addressRegion: "Jihočeský kraj", addressCountry: "CZ" },
+  sameAs: "https://www.facebook.com/p/Hostinec-u-Jand%C5%AF-100083607960708/",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Náměstí Prokopa Chocholouška 18",
+    addressLocality: "Nadějkov",
+    addressRegion: "Jihočeský kraj",
+    addressCountry: "CZ",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday", "Saturday", "Sunday"],
+      opens: "17:00",
+      closes: "22:00",
+    },
+  ],
 });
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
