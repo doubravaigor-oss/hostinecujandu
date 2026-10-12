@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [ ] Odstranit prázdnou zkušební nabídku z veřejného webu a přidat samostatnou hru Cihličky; ověřit ovládání.
+
 - [x] Opravit rozbitý styl (chyba v CSS) – opraveno a ověřeno 12. 10. 2026
 - [x] Retro prvky: pásek „ještě se buduje", plakety v patičce, údaj „Web naposledy doplněn" (doplněno 12. 10. 2026)
 

@@ -13,6 +13,7 @@ const menu = [
   { to: "/aktualne", label: "Aktuálně" },
   { to: "/galerie", label: "Fotogalerie" },
   { to: "/kontakt", label: "Kontakt" },
+  { to: "/hra", label: "🕹 Cihličky" },
 ] as const;
 
 export function Box({ title, children }: { title: string; children: ReactNode }) {

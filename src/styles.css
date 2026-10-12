@@ -34,6 +34,12 @@
   --muted-foreground: oklch(0.42 0.04 60);
   --primary: oklch(0.45 0.18 28);
   --primary-foreground: oklch(0.97 0.03 90);
+  --game-screen: #101410;
+  --game-ink: #e3f3ce;
+  --game-red: #da6252;
+  --game-gold: #efc450;
+  --game-green: #83bd68;
+  --game-cyan: #73bed0;
 }
 
 @layer base {
@@ -179,3 +185,7 @@
   padding: 4px 6px;
   &:focus { outline: 2px solid var(--beer); background: oklch(0.98 0.03 90); }
 }
+
+.cihlicky-screen { background: var(--game-screen); color: var(--game-ink); border: 4px inset var(--wood-light); }
+.cihlicky-screen canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 420; touch-action: none; }
+.cihlicky-overlay { background: var(--game-screen); color: var(--game-ink); font-family: monospace; }
