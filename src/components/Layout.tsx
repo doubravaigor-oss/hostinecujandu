@@ -3,7 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState, type ReactNode } from "react";
 import { Automat } from "@/components/Automat";
 import { kontakt, plakety } from "@/data/hostinec";
-import { obsahQuery, fotkyObsah, hodinyObsah, textyObsah } from "@/lib/obsah.functions";
+import { obsahQuery, hodinyObsah, textyObsah } from "@/lib/obsah.functions";
 import { supabase } from "@/integrations/supabase/client";
 
 const menu = [
@@ -39,7 +39,6 @@ function VerejnaCast({ children }: { children: ReactNode }) {
   const { data: obsah } = useSuspenseQuery(obsahQuery);
   const hodiny = hodinyObsah(obsah);
   const texty = textyObsah(obsah);
-  const fotky = fotkyObsah(obsah);
   const [prihlaseny, setPrihlaseny] = useState<string | null>(null);
 
   useEffect(() => {
@@ -165,9 +164,6 @@ function VerejnaCast({ children }: { children: ReactNode }) {
         </div>
         <div className="mt-1 text-muted-foreground">Na zdraví!</div>
       </footer>
-
-      {/* Fotka velkého sálu se používá i jinde – tady je jen připravená. */}
-      {fotky.length === 0 && <span className="hidden" />}
     </div>
   );
 }

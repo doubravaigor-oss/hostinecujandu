@@ -138,7 +138,7 @@ function AkceAdmin() {
     <AdminShell titulek="Akce a oznámení">
       <h3 className="text-base underline">Oznámení (stránka Aktuálně a Úvod)</h3>
       <p className="mb-2 text-xs">
-        Tady se objevuje termín nejbližších šipek, pozvánka na sraz cokoliv nového.
+        Tady se objevuje termín nejbližších šipek, pozvánka na sraz nebo cokoliv nového.
       </p>
       {obsah.aktuality.map((a) => (
         <RadekAkce key={a.id} akce={a} />

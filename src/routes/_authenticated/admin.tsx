@@ -36,7 +36,7 @@ const Casti = [
   {
     to: "/admin/hodiny",
     titulek: "Otevírací doba",
-    text: "Běžné hodiny i mimořádná změna ( zavřeno, jen do obedě, otevřeno navíc).",
+    text: "Běžné hodiny i mimořádná změna (zavřeno, jen do oběda, otevřeno navíc).",
   },
   {
     to: "/admin/texty",
@@ -91,8 +91,7 @@ function Admin() {
         {obsah.pravidelne.length} pravidelných akcí, {obsah.hodiny.length} řádků otevírací doby.
       </p>
       <p className="mt-2 text-xs text-muted-foreground">
-        Ukládání tady nijak nez_poplatkuje – je to součást webu, žádná placená služba se
-        nepoužívá.
+        Ukládání tady nic navíc nestojí – je to součást webu, žádná placená služba se nepoužívá.
       </p>
     </AdminShell>
   );
