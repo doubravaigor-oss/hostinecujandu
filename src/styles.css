@@ -167,3 +167,15 @@
   to { transform: translateY(114vh) rotate(24deg); opacity: 0; }
 }
 .padajici { position: absolute; top: 0; display: block; filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.45)) saturate(1.2) contrast(1.1); animation: padat 3s ease-in forwards; }
+
+/* Pole na text v administraci (kresleny starem vzhledu) */
+@utility retro-input {
+  background: var(--paper);
+  border: 2px inset oklch(0.75 0.03 85);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: normal;
+  padding: 4px 6px;
+  &:focus { outline: 2px solid var(--beer); background: oklch(0.98 0.03 90); }
+}
