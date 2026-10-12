@@ -17,7 +17,6 @@ function Index() {
         <ul className="mt-2 list-disc pl-5">
           <li>čepované pivo</li>
           <li>klasická hospodská kuchyně</li>
-          <li>víkendové speciality</li>
           <li>společenské posezení</li>
           <li>turnaj v šipkách 301 single out – zhruba jednou za měsíc</li>
         </ul>
