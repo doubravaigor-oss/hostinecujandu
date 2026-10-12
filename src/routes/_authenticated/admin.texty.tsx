@@ -6,7 +6,7 @@ import { AdminShell, DlouhePole, Polek, Tlacitko, useUloziti } from "@/component
 import { obsahQuery, textyObsah } from "@/lib/obsah.functions";
 import { ulozitText } from "@/lib/admin.functions";
 
-export const Route = createFileRoute("/_authenticated/admin.texty")({
+export const Route = createFileRoute("/_authenticated/admin/texty")({
   head: () => ({
     meta: [
       { title: "Texty – administrace – Hostinec U Jandů" },

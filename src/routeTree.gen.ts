@@ -17,8 +17,12 @@ import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as JidloRouteImport } from './routes/jidlo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OslavyRouteImport } from './routes/oslavy'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedAdminAkceRouteImport } from './routes/_authenticated/admin.akce'
 import { Route as AuthenticatedAdminFotkyRouteImport } from './routes/_authenticated/admin.fotky'
+import { Route as AuthenticatedAdminHodinyRouteImport } from './routes/_authenticated/admin.hodiny'
 import { Route as AuthenticatedAdminJidloRouteImport } from './routes/_authenticated/admin.jidlo'
+import { Route as AuthenticatedAdminTextyRouteImport } from './routes/_authenticated/admin.texty'
 import { Route as ApiPublicFotkaIdRouteImport } from './routes/api/public/fotka/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -60,15 +64,36 @@ const OslavyRoute = OslavyRouteImport.update({
   path: '/oslavy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedAdminFotkyRoute = AuthenticatedAdminFotkyRouteImport.update({
-  id: '/admin/fotky',
-  path: '/admin/fotky',
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminAkceRoute = AuthenticatedAdminAkceRouteImport.update({
+  id: '/akce',
+  path: '/akce',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminFotkyRoute = AuthenticatedAdminFotkyRouteImport.update({
+  id: '/fotky',
+  path: '/fotky',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminHodinyRoute =
+  AuthenticatedAdminHodinyRouteImport.update({
+    id: '/hodiny',
+    path: '/hodiny',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminJidloRoute = AuthenticatedAdminJidloRouteImport.update({
-  id: '/admin/jidlo',
-  path: '/admin/jidlo',
-  getParentRoute: () => AuthenticatedRouteRoute,
+  id: '/jidlo',
+  path: '/jidlo',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminTextyRoute = AuthenticatedAdminTextyRouteImport.update({
+  id: '/texty',
+  path: '/texty',
+  getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
 const ApiPublicFotkaIdRoute = ApiPublicFotkaIdRouteImport.update({
   id: '/api/public/fotka/$id',
@@ -84,8 +109,12 @@ export interface FileRoutesByFullPath {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/admin/akce': typeof AuthenticatedAdminAkceRoute
   '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/admin/texty': typeof AuthenticatedAdminTextyRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesByTo {
@@ -96,8 +125,12 @@ export interface FileRoutesByTo {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/admin/akce': typeof AuthenticatedAdminAkceRoute
   '/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/admin/texty': typeof AuthenticatedAdminTextyRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRoutesById {
@@ -110,8 +143,12 @@ export interface FileRoutesById {
   '/jidlo': typeof JidloRoute
   '/kontakt': typeof KontaktRoute
   '/oslavy': typeof OslavyRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/_authenticated/admin/akce': typeof AuthenticatedAdminAkceRoute
   '/_authenticated/admin/fotky': typeof AuthenticatedAdminFotkyRoute
+  '/_authenticated/admin/hodiny': typeof AuthenticatedAdminHodinyRoute
   '/_authenticated/admin/jidlo': typeof AuthenticatedAdminJidloRoute
+  '/_authenticated/admin/texty': typeof AuthenticatedAdminTextyRoute
   '/api/public/fotka/$id': typeof ApiPublicFotkaIdRoute
 }
 export interface FileRouteTypes {
@@ -124,8 +161,12 @@ export interface FileRouteTypes {
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/admin'
+    | '/admin/akce'
     | '/admin/fotky'
+    | '/admin/hodiny'
     | '/admin/jidlo'
+    | '/admin/texty'
     | '/api/public/fotka/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -136,8 +177,12 @@ export interface FileRouteTypes {
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/admin'
+    | '/admin/akce'
     | '/admin/fotky'
+    | '/admin/hodiny'
     | '/admin/jidlo'
+    | '/admin/texty'
     | '/api/public/fotka/$id'
   id:
     | '__root__'
@@ -149,8 +194,12 @@ export interface FileRouteTypes {
     | '/jidlo'
     | '/kontakt'
     | '/oslavy'
+    | '/_authenticated/admin'
+    | '/_authenticated/admin/akce'
     | '/_authenticated/admin/fotky'
+    | '/_authenticated/admin/hodiny'
     | '/_authenticated/admin/jidlo'
+    | '/_authenticated/admin/texty'
     | '/api/public/fotka/$id'
   fileRoutesById: FileRoutesById
 }
@@ -224,19 +273,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OslavyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/akce': {
+      id: '/_authenticated/admin/akce'
+      path: '/akce'
+      fullPath: '/admin/akce'
+      preLoaderRoute: typeof AuthenticatedAdminAkceRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/fotky': {
       id: '/_authenticated/admin/fotky'
-      path: '/admin/fotky'
+      path: '/fotky'
       fullPath: '/admin/fotky'
       preLoaderRoute: typeof AuthenticatedAdminFotkyRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/hodiny': {
+      id: '/_authenticated/admin/hodiny'
+      path: '/hodiny'
+      fullPath: '/admin/hodiny'
+      preLoaderRoute: typeof AuthenticatedAdminHodinyRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
     }
     '/_authenticated/admin/jidlo': {
       id: '/_authenticated/admin/jidlo'
-      path: '/admin/jidlo'
+      path: '/jidlo'
       fullPath: '/admin/jidlo'
       preLoaderRoute: typeof AuthenticatedAdminJidloRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/texty': {
+      id: '/_authenticated/admin/texty'
+      path: '/texty'
+      fullPath: '/admin/texty'
+      preLoaderRoute: typeof AuthenticatedAdminTextyRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
     }
     '/api/public/fotka/$id': {
       id: '/api/public/fotka/$id'
@@ -248,14 +325,31 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface AuthenticatedRouteRouteChildren {
+interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminAkceRoute: typeof AuthenticatedAdminAkceRoute
   AuthenticatedAdminFotkyRoute: typeof AuthenticatedAdminFotkyRoute
+  AuthenticatedAdminHodinyRoute: typeof AuthenticatedAdminHodinyRoute
   AuthenticatedAdminJidloRoute: typeof AuthenticatedAdminJidloRoute
+  AuthenticatedAdminTextyRoute: typeof AuthenticatedAdminTextyRoute
+}
+
+const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminAkceRoute: AuthenticatedAdminAkceRoute,
+  AuthenticatedAdminFotkyRoute: AuthenticatedAdminFotkyRoute,
+  AuthenticatedAdminHodinyRoute: AuthenticatedAdminHodinyRoute,
+  AuthenticatedAdminJidloRoute: AuthenticatedAdminJidloRoute,
+  AuthenticatedAdminTextyRoute: AuthenticatedAdminTextyRoute,
+}
+
+const AuthenticatedAdminRouteWithChildren =
+  AuthenticatedAdminRoute._addFileChildren(AuthenticatedAdminRouteChildren)
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedAdminFotkyRoute: AuthenticatedAdminFotkyRoute,
-  AuthenticatedAdminJidloRoute: AuthenticatedAdminJidloRoute,
+  AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
 }
 
 const AuthenticatedRouteRouteWithChildren =

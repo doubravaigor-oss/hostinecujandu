@@ -13,7 +13,7 @@ import {
 import { obsahQuery, type ObsahAkce, type ObsahPravidelna } from "@/lib/obsah.functions";
 import { posunoutRadek, smazatRadek, ulozitRadek } from "@/lib/admin.functions";
 
-export const Route = createFileRoute("/_authenticated/admin.akce")({
+export const Route = createFileRoute("/_authenticated/admin/akce")({
   head: () => ({
     meta: [
       { title: "Akce a oznámení – administrace – Hostinec U Jandů" },

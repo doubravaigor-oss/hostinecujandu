@@ -1,7 +1,10 @@
-import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { Link, useLocation } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { useEffect, useState, type ReactNode } from "react";
 import { Automat } from "@/components/Automat";
-import { kontakt, oteviraciDoba, plakety, stavWebu } from "@/data/hostinec";
+import { kontakt, plakety } from "@/data/hostinec";
+import { obsahQuery, fotkyObsah, hodinyObsah, textyObsah } from "@/lib/obsah.functions";
+import { supabase } from "@/integrations/supabase/client";
 
 const menu = [
   { to: "/", label: "Úvod" },
@@ -21,7 +24,35 @@ export function Box({ title, children }: { title: string; children: ReactNode })
   );
 }
 
+// Administrace a přihlašovací stránka mají vlastní rám – tady se jen pustí dál.
 export function Layout({ children }: { children: ReactNode }) {
+  const { pathname } = useLocation();
+
+  if (pathname.startsWith("/admin")) return <>{children}</>;
+  if (pathname === "/auth") {
+    return <div className="mx-auto max-w-[560px] p-2 sm:p-4">{children}</div>;
+  }
+  return <VerejnaCast>{children}</VerejnaCast>;
+}
+
+function VerejnaCast({ children }: { children: ReactNode }) {
+  const { data: obsah } = useSuspenseQuery(obsahQuery);
+  const hodiny = hodinyObsah(obsah);
+  const texty = textyObsah(obsah);
+  const fotky = fotkyObsah(obsah);
+  const [prihlaseny, setPrihlaseny] = useState<string | null>(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setPrihlaseny(data.session?.user.email ?? null);
+    });
+  }, []);
+
+  const otevreno = hodiny
+    .filter((h) => !/zav[řr]eno/i.test(h.cas))
+    .map((h) => `${h.den} ${h.cas}`)
+    .join(", ");
+
   return (
     <div className="mx-auto max-w-[900px] p-1 sm:p-3">
       <header className="frame paper p-2 text-center">
@@ -31,19 +62,27 @@ export function Layout({ children }: { children: ReactNode }) {
         </h1>
         <p className="font-bold">Pivnice a tradiční hospodská kuchyně. Otevřeno tři dny v týdnu.</p>
         <p className="text-accent font-bold">
-          Pořádáme oslavy, hostiny, rauty a konference. Od řízku s bramborovým salátem až po bohaté slavnostní tabule.
+          Pořádáme oslavy, hostiny, rauty a konference. Od řízku s bramborovým salátem až po bohaté
+          slavnostní tabule.
         </p>
         <div className="mt-2 flex flex-wrap justify-center gap-2">
-          <a href={kontakt.telefonOdkaz} className="retro-btn-big">☎ {kontakt.telefon}</a>
-          <Link to="/oslavy" className="retro-btn-big">Poptat oslavu nebo hostinu</Link>
+          <a href={kontakt.telefonOdkaz} className="retro-btn-big">
+            ☎ {kontakt.telefon}
+          </a>
+          <Link to="/oslavy" className="retro-btn-big">
+            Poptat oslavu nebo hostinu
+          </Link>
         </div>
       </header>
 
       <div className="frame mt-1 overflow-hidden bg-wood py-0.5 text-sm font-bold text-beer">
-        <span className="marquee-text">*** Otevřeno pátek – sobota – neděle 17:00–22:00 *** Šipky 301 single out – turnaj zhruba jednou za měsíc *** Oslavy, srazy, hostiny, konference *** Volejte {kontakt.telefon} ***</span>
+        <span className="marquee-text">
+          *** Otevřeno: {otevreno || "volejte"} *** Šipky 301 single out – turnaj zhruba jednou za
+          měsíc *** Oslavy, srazy, hostiny, konference *** Volejte {kontakt.telefon} ***
+        </span>
       </div>
 
-      <div className="pod-konstrukci mt-1 text-xs">{stavWebu.podKonstrukci}</div>
+      <div className="pod-konstrukci mt-1 text-xs">{texty.banner}</div>
 
       <div className="mt-2 grid gap-2 md:grid-cols-[180px_minmax(0,1fr)]">
         <aside className="space-y-2">
@@ -52,7 +91,11 @@ export function Layout({ children }: { children: ReactNode }) {
             <ul className="grid grid-cols-2 gap-1 md:grid-cols-1">
               {menu.map((m) => (
                 <li key={m.to}>
-                  <Link to={m.to} className="retro-btn w-full text-center text-xs" activeProps={{ style: { background: "var(--beer)" } }}>
+                  <Link
+                    to={m.to}
+                    className="retro-btn w-full text-center text-xs"
+                    activeProps={{ style: { background: "var(--beer)" } }}
+                  >
                     {m.label}
                   </Link>
                 </li>
@@ -63,14 +106,24 @@ export function Layout({ children }: { children: ReactNode }) {
             <div className="retro-heading -mx-2 -mt-2 mb-2 text-sm">Otevírací doba</div>
             <table className="w-full">
               <tbody>
-                {oteviraciDoba.map((o) => (
-                  <tr key={o.den} className="border-b border-dotted border-border align-top">
+                {hodiny.map((o) => (
+                  <tr key={o.id} className="border-b border-dotted border-border align-top">
                     <td className="pr-1 font-bold">{o.den}</td>
                     <td>{o.cas}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            {obsah.zmeny.length > 0 && (
+              <div className="mt-2 border-2 border-dashed border-title bg-beer/40 p-1">
+                {obsah.zmeny.map((z) => (
+                  <div key={z.id} className="mb-1">
+                    <b>{z.platnost}</b>
+                    <div>{z.text}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <Automat />
         </aside>
@@ -88,17 +141,33 @@ export function Layout({ children }: { children: ReactNode }) {
         )}
         {kontakt.facebook && (
           <div className="mt-1">
-            <a href={kontakt.facebook} target="_blank" rel="noreferrer">Na Facebooku »</a>
+            <a href={kontakt.facebook} target="_blank" rel="noreferrer">
+              Na Facebooku »
+            </a>
           </div>
         )}
         <div className="mt-2 flex flex-wrap justify-center gap-1">
           {plakety.map((p) => (
-            <span key={p} className="retro-badge">{p}</span>
+            <span key={p} className="retro-badge">
+              {p}
+            </span>
           ))}
         </div>
-        <div className="mt-1 text-muted-foreground">Web naposledy doplněn: {stavWebu.naposledyDoplneno}</div>
+        <div className="mt-1 text-muted-foreground">Web naposledy doplněn: {texty.naposledy}</div>
+        <div className="mt-1 text-muted-foreground">
+          {prihlaseny ? (
+            <Link to="/admin">Správa webu »</Link>
+          ) : (
+            <Link to="/auth" className="text-muted-foreground">
+              Správa webu
+            </Link>
+          )}
+        </div>
         <div className="mt-1 text-muted-foreground">Na zdraví!</div>
       </footer>
+
+      {/* Fotka velkého sálu se používá i jinde – tady je jen připravená. */}
+      {fotky.length === 0 && <span className="hidden" />}
     </div>
   );
 }

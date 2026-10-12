@@ -13,7 +13,7 @@ import {
 import { obsahQuery, type ObsahHodiny, type ObsahZmena } from "@/lib/obsah.functions";
 import { posunoutRadek, smazatRadek, ulozitRadek } from "@/lib/admin.functions";
 
-export const Route = createFileRoute("/_authenticated/admin.hodiny")({
+export const Route = createFileRoute("/_authenticated/admin/hodiny")({
   head: () => ({
     meta: [
       { title: "Otevírací doba – administrace – Hostinec U Jandů" },
