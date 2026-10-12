@@ -25,9 +25,21 @@ export const oteviraciDoba: { den: string; cas: string }[] = [
 export type Polozka = { nazev: string; cena: string };
 export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   {
-    kategorie: "Hospodská kuchyně",
+    kategorie: "K jídlu",
     polozky: [
-      { nazev: "Řízek s bramborovým salátem", cena: "cenu doplníme" },
+      { nazev: "Utopenec s chlebem", cena: "75 Kč" },
+      { nazev: "Vinárníkovy tousty", cena: "85 Kč" },
+      { nazev: "Nakládaný hermelín", cena: "90 Kč" },
+      { nazev: "Ďábelská topinka", cena: "90 Kč" },
+      { nazev: "Pizza della casa", cena: "165 Kč" },
+      { nazev: "Táboráček", cena: "50 Kč" },
+    ],
+  },
+  {
+    kategorie: "Drobné pochutiny",
+    polozky: [
+      { nazev: "Chipsy", cena: "38 Kč" },
+      { nazev: "Oříšky", cena: "38 Kč" },
     ],
   },
   { kategorie: "Víkendové speciality", polozky: [] },
