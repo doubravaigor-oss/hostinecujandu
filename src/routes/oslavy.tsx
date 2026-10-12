@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Box } from "@/components/Layout";
-import { kontakt, nabidkaOslav } from "@/data/hostinec";
+import { kontakt, nabidkaOslav, usporadaneAkce } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/oslavy")({
@@ -30,6 +30,13 @@ function Oslavy() {
         <p className="mt-2 border-2 border-dashed border-title p-2">
           <b>Vše děláme na přání zákazníka</b> – rozsah, skladbu i cenu pohoštění řešíme individuálně.
         </p>
+        <p className="mt-4 font-bold">★ Co už jsme u nás uspořádali (za rok a půl):</p>
+        <ul className="mt-2 border-2 border-border bg-beer/20 p-2 pl-6 list-disc">
+          {usporadaneAkce.map((t) => (
+            <li key={t} className="py-0.5">{t}</li>
+          ))}
+        </ul>
+        <p className="mt-2">A až něco nového vymyslíte, zorganizujeme to taky. :-)</p>
         <div className="mt-3 text-center">
           <a href={kontakt.telefonOdkaz} className="retro-btn-big">☎ Poptat oslavu nebo hostinu – {kontakt.telefon}</a>
         </div>
