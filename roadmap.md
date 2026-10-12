@@ -1,6 +1,7 @@
 # Co ještě doplnit na web
 
-- [ ] HODNĚ DŮLEŽITÉ: opravit rozbitý styl (chyba v CSS od nového pásku a plakety)
+- [x] Opravit rozbitý styl (chyba v CSS) – opraveno a ověřeno 12. 10. 2026
+- [x] Retro prvky: pásek „ještě se buduje", plakety v patičce, údaj „Web naposledy doplněn" (doplněno 12. 10. 2026)
 
 - [x] Jídelní lístek: jídla a ceny (doplněno 12. 10. 2026)
 - [ ] Víkendové speciality (čeká na údaje od majitele)
