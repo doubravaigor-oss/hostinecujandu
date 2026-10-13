@@ -40,6 +40,7 @@
   --game-gold: #efc450;
   --game-green: #83bd68;
   --game-cyan: #73bed0;
+  --stamgast-pozadi: #ffffff;
 }
 
 @layer base {
@@ -189,3 +190,20 @@
 .cihlicky-screen { background: var(--game-screen); color: var(--game-ink); border: 4px inset var(--wood-light); }
 .cihlicky-screen canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 420; touch-action: none; }
 .cihlicky-overlay { background: var(--game-screen); color: var(--game-ink); font-family: monospace; }
+
+.stamgast-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; padding: 12px; }
+.stamgast-scena { position: relative; width: 220px; height: 220px; flex: 0 0 220px; overflow: hidden; background: var(--stamgast-pozadi); border: 2px inset var(--wood-light); }
+.stamgast-obrazek { position: absolute; width: 200%; height: 200%; max-width: none; top: 0; left: 0; }
+.stamgast-pivo .stamgast-obrazek { left: -100%; animation: stamgast-dousek 1.4s ease-in-out 3; }
+.stamgast-zelena .stamgast-obrazek { top: -100%; animation: stamgast-ex 1.8s ease-in-out; }
+.stamgast-sucho .stamgast-obrazek { left: -100%; top: -100%; animation: stamgast-vzlyk 0.65s ease-in-out 6; }
+.stamgast-volby { flex: 1 1 180px; max-width: 320px; min-width: 0; }
+.stamgast-hlaska { min-height: 48px; margin-bottom: 8px; }
+.stamgast-slzy { position: absolute; top: 35%; left: 34%; font-size: 16px; animation: stamgast-slzy 1s ease-in 4; }
+@keyframes stamgast-dousek { 50% { transform: translateY(3px) rotate(-1deg); } }
+@keyframes stamgast-ex { 35%, 70% { transform: translateY(-4px) rotate(-2deg); } }
+@keyframes stamgast-vzlyk { 50% { transform: translateX(2px); } }
+@keyframes stamgast-slzy { from { transform: translateY(0); opacity: 1; } to { transform: translateY(35px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .stamgast-obrazek, .stamgast-slzy { animation: none !important; }
+}

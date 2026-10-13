@@ -3,6 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
 import { Hodnoceni } from "@/components/Hodnoceni";
 import { StiraciLos } from "@/components/StiraciLos";
+import { Stamgast } from "@/components/Stamgast";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
 
@@ -41,6 +42,7 @@ function Index() {
           <StiraciLos />
         </div>
       </Box>
+      <Stamgast />
       <Hodnoceni />
       <section className="frame mb-3 bg-wood p-3 text-beer">
         <h2 className="text-2xl" style={{ color: "var(--beer)" }}>

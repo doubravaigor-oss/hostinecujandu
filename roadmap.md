@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [ ] Štamgast na hlavní stránce: pivo, panák zelené a pláč bez pití; ověřit všechny reakce.
+
 - [x] Prázdná zkušební nabídka odstraněna z veřejného webu; samostatná hra Cihličky v menu, odpalování, skóre, pauza a nová hra ověřeny.
 
 - [x] Opravit rozbitý styl (chyba v CSS) – opraveno a ověřeno 12. 10. 2026
