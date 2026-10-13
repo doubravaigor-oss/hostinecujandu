@@ -227,3 +227,17 @@ export const hraText = {
   vyhra: "Všechny cihličky dole. Na zdraví!",
   konec: "Míček utekl. Odveta?",
 };
+
+export const stamgastText = {
+  nadpis: "★ Náš štamgast ★",
+  pivo: "🍺 Kup mu pivo",
+  zelena: "🥃 Kup mu panáka zelený",
+  sucho: "💧 Nech ho na suchu",
+  ceka: "Tak co, dáme jedno?",
+  pijePivo: "Ááách… to je pohlazení po duši!",
+  poPivu: "To byla dobrota! Pěna na kníru, blaženost v srdci.",
+  pijeZelenou: "Na zdraví! A šup tam s ní!",
+  poZelene: "Ex! Až se mi čepice zazelenala.",
+  place: "Ani kapku? To mi snad nedělejte… bééé!",
+  poznamka: "Jen legrace — nic neplatíte a nic neobjednáváte.",
+};

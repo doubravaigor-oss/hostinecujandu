@@ -11,3 +11,4 @@
 - All editable site content lives in src/data/hostinec.ts — owner updates via chat, one place to change.
 - Standalone games live on /hra and use a client-initialized Matter.js engine; keep physics and animation isolated from public content and SSR.
 - Public menus omit empty categories so unfinished admin entries never appear as offers.
+- The homepage pub regular uses an isolated client-side reaction component with a shared illustration sprite sheet and cleaned-up timers; it must never create real orders or payments.

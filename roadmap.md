@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [x] Štamgast na hlavní stránce: návštěvník vybírá pivo, panáka zelené nebo pláč bez pití vlastními tlačítky; všechny reakce i zobrazení na telefonu ověřeny.
+
 - [x] Prázdná zkušební nabídka odstraněna z veřejného webu; samostatná hra Cihličky v menu, odpalování, skóre, pauza a nová hra ověřeny.
 
 - [x] Opravit rozbitý styl (chyba v CSS) – opraveno a ověřeno 12. 10. 2026
