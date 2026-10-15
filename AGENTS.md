@@ -12,3 +12,4 @@
 - Standalone games live on /hra and use a client-initialized Matter.js engine; keep physics and animation isolated from public content and SSR.
 - Public menus omit empty categories so unfinished admin entries never appear as offers.
 - The homepage pub regular uses an isolated client-side reaction component with a shared illustration sprite sheet and cleaned-up timers; it must never create real orders or payments.
+- The homepage soup toy keeps drops and animation local to an isolated component, using bundled illustrations and cleaned-up timers; kitchen guest preferences remain separate from database-overridden cooking copy.

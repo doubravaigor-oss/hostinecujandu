@@ -123,6 +123,7 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
 export const kuchyneSlib = {
   nadpis: "Vaříme pouze z čerstvých surovin!",
   text: "Když u nás vaříme, snažíme se používat pouze čerstvé suroviny – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin. Bez výmluv.",
+  maggi: "Máte rádi Maggi do polévky? Klidně si ji dochuťte po svém – rádi vám lahvičku dáme na stůl.",
 };
 
 // Stav webu – pásek "ještě se buduje" a údaj o posledním doplnění.
@@ -240,4 +241,18 @@ export const stamgastText = {
   poZelene: "Ex! Až se mi čepice zazelenala.",
   place: "Ani kapku? To mi snad nedělejte… bééé!",
   poznamka: "Jen legrace — nic neplatíte a nic neobjednáváte.",
+};
+
+export const maggiText = {
+  nadpis: "★ Polévka podle vašeho gusta ★",
+  lahvicka: "Lahvička Maggi",
+  kapka: "Přidat kapku",
+  davka: "Počet kapek",
+  pridat: "Dochutit",
+  nova: "Nová polévka",
+  pocet: "Kapek v polévce:",
+  cista: "Čistý vývar.",
+  trochu: "Trocha Maggi podle chuti.",
+  hodne: "Pořádně dochuceno!",
+  hneda: "Tak tahle už je úplně hnědá!",
 };
