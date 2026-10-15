@@ -1,6 +1,6 @@
 # Co ještě doplnit na web
 
-- [ ] Doplnit vstřícnou větu o Maggi na přání a polévku s lahvičkou, kapkami a postupným hnědnutím; ověřit ovládání.
+- [x] Věta o Maggi na přání na Úvodu a u jídelníčku; na Úvodu polévka s otočením lahvičky, volbou kapek, hnědnutím a novou porcí. Ověřeno včetně telefonu.
 
 - [x] Štamgast na hlavní stránce: návštěvník vybírá pivo, panáka zelené nebo pláč bez pití vlastními tlačítky; všechny reakce i zobrazení na telefonu ověřeny.
 
