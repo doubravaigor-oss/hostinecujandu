@@ -4,7 +4,6 @@ import { Box } from "@/components/Layout";
 import { Hodnoceni } from "@/components/Hodnoceni";
 import { StiraciLos } from "@/components/StiraciLos";
 import { Stamgast } from "@/components/Stamgast";
-import { MaggiHra } from "@/components/MaggiHra";
 import { kuchyneSlib } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
@@ -13,7 +12,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     seo(
       "Pivnice, hospodská kuchyně a oslavy",
-      "Hostinec U Jandů v Nadějkově – vaříme pouze z čerstvých surovin, bez umělých dochucovadel. Otevřeno pátek až neděle. Turnaje v šipkách, oslavy i konference.",
+      "Hostinec U Jandů v Nadějkově – hospodská kuchyně, čepované pivo a oslavy na míru. Otevřeno pátek až neděle 17:00–22:00. Turnaje v šipkách, srazy i konference.",
     ),
   component: Index,
 });
@@ -45,7 +44,6 @@ function Index() {
           <StiraciLos />
         </div>
       </Box>
-      <MaggiHra />
       <Stamgast />
       <Hodnoceni />
       <section className="frame mb-3 bg-wood p-3 text-beer">

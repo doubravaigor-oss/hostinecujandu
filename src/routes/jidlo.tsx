@@ -9,7 +9,7 @@ export const Route = createFileRoute("/jidlo")({
   head: () =>
     seo(
       "Jídlo a pití",
-      "Vaříme pouze z čerstvých surovin, bez umělých dochucovadel. Jídelní a nápojový lístek Hostince U Jandů v Nadějkově.",
+      "Jídelní a nápojový lístek Hostince U Jandů v Nadějkově – utopenec, nakládaný hermelín, tousty, pizza i točené pivo.",
     ),
   component: Jidlo,
 });
