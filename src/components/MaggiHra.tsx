@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
 import { RotateCcw, Droplet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { maggiText as text } from "@/data/hostinec";
+import { zvukKapka } from "@/lib/zvuky";
 import lahev from "@/assets/maggi-bottle.png";
 import polevka from "@/assets/maggi-soup.png";
 

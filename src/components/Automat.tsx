@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import burt from "@/assets/burt.png";
 import hermelin from "@/assets/hermelin.png";
 import utopenec from "@/assets/utopenec.png";
+import { zvukCvak, zvukPaka, zvukVyhra, zvukZastaveni } from "@/lib/zvuky";
 
 const OBR = [utopenec, utopenec, utopenec, burt, hermelin];
 const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec;

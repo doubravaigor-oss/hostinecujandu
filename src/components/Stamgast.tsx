@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
+import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
 import obrazek from "@/assets/stamgast-sheet.jpg";
 
 type Reakce = "ceka" | "pivo" | "zelena" | "sucho";
