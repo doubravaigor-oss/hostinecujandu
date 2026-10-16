@@ -186,7 +186,10 @@ export function Automat() {
           » ZATÁHNOUT «
         </button>
       </div>
-      <div className="mt-1 text-muted-foreground">Hra jen pro zábavu, o nic se nehraje.</div>
+      <div className="mt-1 border-2 border-border bg-paper px-1 py-0.5 text-[10px] leading-tight text-foreground">
+        Hra jen pro zábavu, o nic se nehraje.
+      </div>
+
 
       {padaji.length > 0 && (
         <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden" aria-hidden="true">
