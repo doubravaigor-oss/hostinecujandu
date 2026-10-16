@@ -4,7 +4,6 @@ import { Box } from "@/components/Layout";
 import { Hodnoceni } from "@/components/Hodnoceni";
 import { StiraciLos } from "@/components/StiraciLos";
 import { Stamgast } from "@/components/Stamgast";
-import { kuchyneSlib } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
 

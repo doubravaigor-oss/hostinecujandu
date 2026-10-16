@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Box } from "@/components/Layout";
 import { seo } from "@/lib/seo";
-import { kuchyneSlib } from "@/data/hostinec";
 import { obsahQuery, kategorieObsah, textyObsah } from "@/lib/obsah.functions";
 
 export const Route = createFileRoute("/jidlo")({
