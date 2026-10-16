@@ -209,22 +209,23 @@
   .stamgast-obrazek, .stamgast-slzy { animation: none !important; }
 }
 
-.maggi-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
-.maggi-scena { width: 300px; height: 230px; flex: 0 1 300px; position: relative; }
-.maggi-miska { position: absolute; width: 270px; height: 183px; bottom: 0; left: 0; }
+.maggi-layout { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.maggi-scena { width: 100%; max-width: 300px; aspect-ratio: 300 / 230; position: relative; }
+.maggi-miska { position: absolute; width: 90%; height: 80%; bottom: 0; left: 0; }
 .maggi-miska img { display: block; width: 100%; height: 100%; }
 .maggi-hladina { position: absolute; left: 18%; top: 21%; width: 64%; height: 38%; border-radius: 50%; background: var(--maggi-dochucovadlo); opacity: var(--maggi-strength); transition: opacity 180ms linear; }
-.maggi-lahev { position: absolute; right: 4px; top: 0; width: 65px; height: 105px; padding: 0; background: none !important; border-radius: 0; transform-origin: 50% 80%; transition: transform 300ms ease; cursor: grab; }
+.maggi-lahev { position: absolute; right: 1%; top: 0; width: 22%; height: 46%; padding: 0; background: none !important; border-radius: 0; transform-origin: 50% 80%; transition: transform 300ms ease; cursor: grab; }
 .maggi-lahev img { width: 100%; height: 100%; object-fit: contain; }
 .maggi-lahev:focus-visible { outline: 2px solid var(--link); }
-.maggi-leje .maggi-lahev { transform: translate(-40px, 5px) rotate(-115deg); opacity: 1; }
-.maggi-proud { position: absolute; top: 104px; left: 200px; width: 14px; height: 44px; }
-.maggi-proud i { position: absolute; width: 5px; height: 9px; background: var(--maggi-dochucovadlo); border-radius: 60% 60% 50% 50%; animation: maggi-kapka 390ms linear infinite; }
+.maggi-leje .maggi-lahev { transform: translate(-60%, 5%) rotate(-115deg); opacity: 1; }
+.maggi-proud { position: absolute; top: 45%; left: 66%; width: 5%; height: 19%; }
+.maggi-proud i { position: absolute; width: 4px; height: 8px; background: var(--maggi-dochucovadlo); border-radius: 60% 60% 50% 50%; animation: maggi-kapka 390ms linear infinite; }
 .maggi-proud i:nth-child(2) { animation-delay: 130ms; left: 3px; }
 .maggi-proud i:nth-child(3) { animation-delay: 260ms; left: -2px; }
-.maggi-ovladani { flex: 1 1 180px; max-width: 280px; min-width: 0; }
-.maggi-hlaska { min-height: 32px; margin: 4px 0 8px; }
-@keyframes maggi-kapka { from { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } to { transform: translateY(35px); opacity: 0; } }
+.maggi-ovladani { width: 100%; }
+.maggi-hlaska { min-height: 30px; margin: 4px 0 6px; }
+@keyframes maggi-kapka { from { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } to { transform: translateY(340%); opacity: 0; } }
+
 @media (prefers-reduced-motion: reduce) {
   .maggi-lahev, .maggi-hladina { transition: none; }
   .maggi-proud i { animation: none; top: 20px; }

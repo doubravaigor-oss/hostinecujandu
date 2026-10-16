@@ -5,6 +5,8 @@ import { maggiText as text } from "@/data/hostinec";
 import lahev from "@/assets/maggi-bottle.png";
 import polevka from "@/assets/maggi-soup.png";
 
+// Hra v postranním sloupci: scéna se zmenší podle šířky sloupce,
+// takže se vejde i vedle menu na malém displeji.
 export function MaggiHra() {
   const [kapky, setKapky] = useState(0);
   const [davka, setDavka] = useState("5");
@@ -46,8 +48,8 @@ export function MaggiHra() {
   }
 
   return (
-    <section className="frame paper mb-3" aria-labelledby={`${id}-nadpis`}>
-      <h2 className="retro-heading" id={`${id}-nadpis`}>{text.nadpis}</h2>
+    <div className="frame paper p-2 text-xs" aria-labelledby={`${id}-nadpis`}>
+      <div className="retro-heading -mx-2 -mt-2 mb-2 text-sm" id={`${id}-nadpis`}>{text.nadpis}</div>
       <div className="maggi-layout">
         <div className={`maggi-scena ${leje ? "maggi-leje" : ""}`} data-kapky={kapky}>
           <div className="maggi-miska">
@@ -62,16 +64,16 @@ export function MaggiHra() {
         <div className="maggi-ovladani">
           <p className="font-bold" role="status" aria-live="polite">{text.pocet} <span>{kapky}</span></p>
           <p className="maggi-hlaska text-xs text-title">{kapky === 0 ? text.cista : kapky < 15 ? text.trochu : kapky < 60 ? text.hodne : text.hneda}</p>
-          <form onSubmit={(e) => { e.preventDefault(); if (platnaDavka) nalit(pocet); }} className="flex flex-wrap items-end gap-2">
+          <form onSubmit={(e) => { e.preventDefault(); if (platnaDavka) nalit(pocet); }} className="flex flex-wrap items-end gap-1">
             <label className="flex flex-col gap-1 text-xs" htmlFor={`${id}-davka`}>
               {text.davka}
-              <input id={`${id}-davka`} className="retro-input w-24" type="number" min="1" step="1" value={davka} disabled={leje} onChange={(e) => setDavka(e.target.value)} />
+              <input id={`${id}-davka`} className="retro-input w-16" type="number" min="1" step="1" value={davka} disabled={leje} onChange={(e) => setDavka(e.target.value)} />
             </label>
-            <Button type="submit" variant="ghost" disabled={leje || !platnaDavka} className="retro-btn h-auto rounded-none text-xs"><Droplet size={14} />{text.pridat}</Button>
+            <Button type="submit" variant="ghost" disabled={leje || !platnaDavka} className="retro-btn h-auto rounded-none text-xs"><Droplet size={12} />{text.pridat}</Button>
           </form>
-          <Button variant="ghost" onClick={nova} className="retro-btn mt-3 h-auto rounded-none text-xs"><RotateCcw size={14} />{text.nova}</Button>
+          <Button variant="ghost" onClick={nova} className="retro-btn mt-2 h-auto rounded-none text-xs"><RotateCcw size={12} />{text.nova}</Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
