@@ -20,6 +20,9 @@ export function Stamgast() {
     if (casovac.current) clearTimeout(casovac.current);
     setReakce(volba);
     setZprava(volba === "pivo" ? text.pijePivo : volba === "zelena" ? text.pijeZelenou : text.place);
+    if (volba === "pivo") zvukPivo();
+    else if (volba === "zelena") zvukPanak();
+    else zvukPlac();
     if (volba === "sucho") return;
     casovac.current = setTimeout(() => {
       setReakce("ceka");

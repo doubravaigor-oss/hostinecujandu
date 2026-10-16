@@ -37,6 +37,7 @@ export function Automat() {
     setPadaji([]);
     setZprava("Točí se...");
     setPaka(true);
+    zvukPaka();
     setTimeout(() => setPaka(false), 450);
     setStoji([false, false, false]);
     const vyhrava = Math.random() < 0.28;

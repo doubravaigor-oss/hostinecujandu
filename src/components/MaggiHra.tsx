@@ -29,6 +29,7 @@ export function MaggiHra() {
     const kroky = Math.min(20, Math.max(5, kolik));
     casovac.current = setInterval(() => {
       krok += 1;
+      zvukKapka();
       const cil = Math.round(kolik * krok / kroky);
       const navic = cil - pridano;
       pridano = cil;
