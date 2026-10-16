@@ -119,12 +119,14 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
   ] },
 ];
 
-// Benefit kuchyně (zadáno majitelem – na webu jako hlavní přednost)
+// Kuchyně (zadáno majitelem). Záměrně bez velkých řečí o čerstvosti –
+// to dnes slibuje každý. Naší předností je, že nikomu nic nezakazujeme.
 export const kuchyneSlib = {
-  nadpis: "Vaříme pouze z čerstvých surovin!",
-  text: "Když u nás vaříme, snažíme se používat pouze čerstvé suroviny – bez umělých dochucovadel. Zážitek z čerstvě zpracovaných kvalitních surovin. Bez výmluv.",
-  maggi: "Máte rádi Maggi do polévky? Klidně si ji dochuťte po svém – rádi vám lahvičku dáme na stůl.",
+  nadpis: "Hospodská kuchyně, bez velkých řečí",
+  text: "Když u nás vaříme, bereme čerstvé suroviny a bez umělých dochucovadel. Neděláme z toho ale reklamu – kdo má rád Maggi, ať si polévku dochutí po svém. Rádi mu lahvičku dáme na stůl.",
+  maggi: "Máte rádi Maggi do polévky? Lahvičku vám rádi dáme na stůl. A tady na webu si polévku dochutíte sám – kapku po kapce, klidně úplně dohněda.",
 };
+
 
 // Stav webu – pásek "ještě se buduje" a údaj o posledním doplnění.
 // Až něco doplníte, přepište datum naposledyDoplneno.

@@ -2,6 +2,8 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState, type ReactNode } from "react";
 import { Automat } from "@/components/Automat";
+import { MaggiHra } from "@/components/MaggiHra";
+
 import { kontakt, plakety } from "@/data/hostinec";
 import { obsahQuery, hodinyObsah, textyObsah } from "@/lib/obsah.functions";
 import { supabase } from "@/integrations/supabase/client";
@@ -126,6 +128,8 @@ function VerejnaCast({ children }: { children: ReactNode }) {
             )}
           </div>
           <Automat />
+          <MaggiHra />
+
         </aside>
         <main className="order-1 min-w-0 md:order-2">{children}</main>
       </div>

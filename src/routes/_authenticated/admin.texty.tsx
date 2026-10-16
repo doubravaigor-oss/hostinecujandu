@@ -63,7 +63,7 @@ function TextyAdmin() {
         klic="kuchyne_nadpis"
         label="Nadpis o vaření (žlutý rámeček na stránce Jídlo a pití)"
         hodnota={obsah.texty.kuchyne_nadpis}
-        napoveda="Například „Vaříme pouze z čerstvých surovin!“"
+        napoveda="Například „Hospodská kuchyně, bez velkých řečí“"
       />
       <RadekTextu
         klic="kuchyne_text"
