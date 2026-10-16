@@ -123,7 +123,7 @@ export const jidelniListek: { kategorie: string; polozky: Polozka[] }[] = [
 // to dnes slibuje každý. Naší předností je, že nikomu nic nezakazujeme.
 export const kuchyneSlib = {
   nadpis: "Hospodská kuchyně, bez velkých řečí",
-  text: "Když u nás vaříme, bereme čerstvé suroviny a bez umělých dochucovadel. Neděláme z toho ale reklamu – kdo má rád Maggi, ať si polévku dochutí po svém. Rádi mu lahvičku dáme na stůl.",
+  text: "Když u nás vaříme, vaříme z dobrých surovin, aby bylo dobré jídlo. Neděláme z toho reklamu – kdo má rád Maggi, ať si polévku dochutí po svém. Rádi mu lahvičku dáme na stůl.",
   maggi: "Máte rádi Maggi do polévky? Lahvičku vám rádi dáme na stůl. A tady na webu si polévku dochutíte sám – kapku po kapce, klidně úplně dohněda.",
 };
 

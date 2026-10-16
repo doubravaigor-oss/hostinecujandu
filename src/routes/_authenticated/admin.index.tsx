@@ -36,7 +36,7 @@ const Casti = [
   {
     to: "/admin/texty",
     titulek: "Texty",
-    text: "Žlutý pásek „ještě doplňujeme“ a věta o čerstvých surovinách.",
+    text: "Žlutý pásek „ještě doplňujeme“ a text o kuchyni.",
   },
 ] as const;
 
