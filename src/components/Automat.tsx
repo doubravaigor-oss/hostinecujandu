@@ -45,6 +45,8 @@ export function Automat() {
     let n = 0;
     casovac.current = setInterval(() => {
       n++;
+      zvukCvak();
+      if (ZASTAVENI.includes(n)) zvukZastaveni();
       const hotovo = ZASTAVENI.map((z) => n >= z);
       setValce((stare) =>
         stare.map((v, i) => {
@@ -64,6 +66,7 @@ export function Automat() {
         if (casovac.current) clearInterval(casovac.current);
         if (vyhrava) {
           setVyhra(true);
+          zvukVyhra();
           setZprava("VÝHRA! JACKPOT!");
           setPadaji(
             Array.from({ length: 26 }, (_, i) => ({
