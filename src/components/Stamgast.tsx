@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
+import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
 import obrazek from "@/assets/stamgast-sheet.jpg";
 
 type Reakce = "ceka" | "pivo" | "zelena" | "sucho";
@@ -19,6 +20,9 @@ export function Stamgast() {
     if (casovac.current) clearTimeout(casovac.current);
     setReakce(volba);
     setZprava(volba === "pivo" ? text.pijePivo : volba === "zelena" ? text.pijeZelenou : text.place);
+    if (volba === "pivo") zvukPivo();
+    else if (volba === "zelena") zvukPanak();
+    else zvukPlac();
     if (volba === "sucho") return;
     casovac.current = setTimeout(() => {
       setReakce("ceka");

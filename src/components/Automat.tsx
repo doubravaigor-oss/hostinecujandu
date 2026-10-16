@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import burt from "@/assets/burt.png";
 import hermelin from "@/assets/hermelin.png";
 import utopenec from "@/assets/utopenec.png";
+import { zvukCvak, zvukPaka, zvukVyhra, zvukZastaveni } from "@/lib/zvuky";
 
 const OBR = [utopenec, utopenec, utopenec, burt, hermelin];
 const nahodnyObr = () => OBR[Math.floor(Math.random() * OBR.length)] ?? utopenec;
@@ -36,6 +37,7 @@ export function Automat() {
     setPadaji([]);
     setZprava("Točí se...");
     setPaka(true);
+    zvukPaka();
     setTimeout(() => setPaka(false), 450);
     setStoji([false, false, false]);
     const vyhrava = Math.random() < 0.28;
@@ -43,6 +45,8 @@ export function Automat() {
     let n = 0;
     casovac.current = setInterval(() => {
       n++;
+      zvukCvak();
+      if (ZASTAVENI.includes(n)) zvukZastaveni();
       const hotovo = ZASTAVENI.map((z) => n >= z);
       setValce((stare) =>
         stare.map((v, i) => {
@@ -62,6 +66,7 @@ export function Automat() {
         if (casovac.current) clearInterval(casovac.current);
         if (vyhrava) {
           setVyhra(true);
+          zvukVyhra();
           setZprava("VÝHRA! JACKPOT!");
           setPadaji(
             Array.from({ length: 26 }, (_, i) => ({
