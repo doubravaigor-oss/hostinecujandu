@@ -2,6 +2,9 @@
 
 - [x] Věta o Maggi na přání na Úvodu a u jídelníčku; na Úvodu polévka s otočením lahvičky, volbou kapek, hnědnutím a novou porcí. Ověřeno včetně telefonu.
 
+- [x] Polévková hra přesunuta do postranního sloupce pod automat (je tedy na každé stránce, na telefonu až dolů); texty o vaření zklidněny bez velkých řečí o čerstvosti. Ověřeno 16. 10. 2026.
+
+
 - [x] Štamgast na hlavní stránce: návštěvník vybírá pivo, panáka zelené nebo pláč bez pití vlastními tlačítky; všechny reakce i zobrazení na telefonu ověřeny.
 
 - [x] Prázdná zkušební nabídka odstraněna z veřejného webu; samostatná hra Cihličky v menu, odpalování, skóre, pauza a nová hra ověřeny.
