@@ -24,7 +24,6 @@ function Jidlo() {
       <div className="frame bg-beer p-2 mb-3 text-center">
         <div className="font-bold text-base underline">{texty.kuchyne_nadpis}</div>
         <div className="text-xs mt-1">{texty.kuchyne_text}</div>
-        <p className="text-xs mt-2">{kuchyneSlib.maggi}</p>
       </div>
       {kategorie.filter((k) => k.polozky.length > 0).map((k) => (
         <div key={k.id} className="mb-3">

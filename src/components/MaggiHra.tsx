@@ -50,6 +50,7 @@ export function MaggiHra() {
   return (
     <div className="frame paper p-2 text-xs" aria-labelledby={`${id}-nadpis`}>
       <div className="retro-heading -mx-2 -mt-2 mb-2 text-sm" id={`${id}-nadpis`}>{text.nadpis}</div>
+      <p className="mb-2">{text.uvod}</p>
       <div className="maggi-layout">
         <div className={`maggi-scena ${leje ? "maggi-leje" : ""}`} data-kapky={kapky}>
           <div className="maggi-miska">

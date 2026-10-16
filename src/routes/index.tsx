@@ -30,7 +30,6 @@ function Index() {
             <p>Jsme tradiční venkovská pivnice s běžným hospodským jídlem.</p>
             <p className="mt-1 font-bold">{texty.kuchyne_nadpis}</p>
             <p className="text-xs">{texty.kuchyne_text}</p>
-            <p className="mt-2 text-xs">{kuchyneSlib.maggi}</p>
             <ul className="mt-2 list-disc pl-5">
               <li>čepované pivo</li>
               <li>klasická hospodská kuchyně</li>
