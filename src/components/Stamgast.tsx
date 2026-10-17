@@ -2,9 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
 import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
-import obrazek from "@/assets/stamgast-igor-foto.jpg";
+import obrazekCeka from "@/assets/stamgast-igor-foto.jpg";
+import obrazekPivo from "@/assets/stamgast-pivo.jpg";
+import obrazekZelena from "@/assets/stamgast-zelena.jpg";
+import obrazekSucho from "@/assets/stamgast-sucho.jpg";
 
 type Reakce = "ceka" | "pivo" | "zelena" | "sucho";
+
+const obrazky: Record<Reakce, { src: string; alt: string }> = {
+  ceka: { src: obrazekCeka, alt: "Usměvavý štamgast na židli u stolu" },
+  pivo: { src: obrazekPivo, alt: "Štamgast si blaženě vychutnává pivo" },
+  zelena: { src: obrazekZelena, alt: "Štamgast exuje panáka zelené" },
+  sucho: { src: obrazekSucho, alt: "Štamgast u prázdného stolu pláče" },
+};
 
 export function Stamgast() {
   const [reakce, setReakce] = useState<Reakce>("ceka");
@@ -35,12 +45,9 @@ export function Stamgast() {
       <h2 id="stamgast-nadpis" className="retro-heading">{text.nadpis}</h2>
       <div className="stamgast-layout">
         <div className={`stamgast-scena stamgast-${reakce}`} data-reakce={reakce}>
-          <img src={obrazek} width={600} height={600} loading="lazy"
-            alt={reakce === "pivo" ? "Štamgast si blaženě vychutnává pivo" : reakce === "zelena" ? "Štamgast exuje panáka zelené" : reakce === "sucho" ? "Štamgast u prázdného stolu pláče" : "Usměvavý štamgast na židli u stolu"}
+          <img key={reakce} src={obrazky[reakce].src} width={600} height={600} loading="lazy"
+            alt={obrazky[reakce].alt}
             className="stamgast-obrazek" />
-          {reakce === "pivo" && <span className="stamgast-rekvizita" aria-hidden="true" />}
-          {reakce === "zelena" && <span className="stamgast-rekvizita stamgast-panak" aria-hidden="true" />}
-          {reakce === "sucho" && <span className="stamgast-slzy" aria-hidden="true"><i /><i /></span>}
         </div>
         <div className="stamgast-volby">
           <p className="stamgast-hlaska font-bold text-title" role="status" aria-live="polite">{zprava}</p>
