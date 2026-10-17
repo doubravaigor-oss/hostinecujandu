@@ -1,6 +1,4 @@
-// ============= Full file contents =============
-
-1: import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
 import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
