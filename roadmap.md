@@ -17,7 +17,7 @@
 - [ ] Konkrétní termíny nejbližších šipkových turnajů (čeká na údaje od majitele)
 - [x] Fotky do galerie – 10 fotek s popisky (doplněno 12. 10. 2026)
 - [x] Nápoje doplněny z PDF (12. 10. 2026)
-- [ ] Zkontrolovat web a případně spustit do sítě
+- [x] Zkontrolovat web a spustit do sítě – publikováno na https://hostinecujandu.lovable.app, ověřeno 17. 10. 2026
 - [x] Popisky jídel: utopenec, tousty, hermelín, pizza, Ďábelská topinka (doplněno 12. 10. 2026)
 - [ ] Popisek Táboráčku (čeká na údaje od majitele)
 - [ ] Vlastní adresa www.hostinecujandu.cz – vyžaduje placený tarif a pořízení domény (zeptal se 12. 10. 2026)
