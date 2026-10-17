@@ -204,7 +204,7 @@
 .stamgast-volby { flex: 1 1 180px; max-width: 320px; min-width: 0; }
 .stamgast-hlaska { min-height: 48px; margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) {
-  .stamgast-obrazek, .stamgast-slzy, .stamgast-rekvizita { animation: none !important; }
+  .stamgast-obrazek { animation: none !important; }
 }
 
 .maggi-layout { display: flex; flex-direction: column; align-items: center; gap: 6px; }
