@@ -205,7 +205,7 @@
 .stamgast-hlaska { min-height: 48px; margin-bottom: 8px; }
 .stamgast-slzy { position: absolute; top: 50%; left: 27%; width: 46%; display: flex; justify-content: space-between; animation: stamgast-slzy 1s ease-in 4; }
 @keyframes stamgast-dousek { 50% { transform: rotate(-6deg) scale(1.25); } }
-@keyframes stamgast-ex { 40%, 70% { transform: rotate(-12deg) scale(1.35); } }
+@keyframes stamgast-ex { 40%, 70% { transform: rotate(-12deg) scale(1.5); } }
 @keyframes stamgast-vzlyk { 50% { transform: scale(1.08) translateX(3px); } }
 .stamgast-slzy i { width: 9px; height: 13px; background: #5ab4f0; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; box-shadow: 0 0 2px #fff; }
 @keyframes stamgast-slzy { from { transform: translateY(0); opacity: 1; } to { transform: translateY(35px); opacity: 0; } }
