@@ -194,19 +194,22 @@
 
 .stamgast-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; padding: 12px; }
 .stamgast-scena { position: relative; width: 220px; height: 220px; flex: 0 0 220px; overflow: hidden; background: var(--stamgast-pozadi); border: 2px inset var(--wood-light); }
-.stamgast-obrazek { position: absolute; width: 200%; height: 200%; max-width: none; top: 0; left: 0; }
-.stamgast-pivo .stamgast-obrazek { left: -100%; animation: stamgast-dousek 1.4s ease-in-out 3; }
-.stamgast-zelena .stamgast-obrazek { top: -100%; animation: stamgast-ex 1.8s ease-in-out; }
-.stamgast-sucho .stamgast-obrazek { left: -100%; top: -100%; animation: stamgast-vzlyk 0.65s ease-in-out 6; }
+.stamgast-obrazek { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 90%; }
+.stamgast-pivo .stamgast-obrazek { animation: stamgast-dousek 1.4s ease-in-out 3; }
+.stamgast-zelena .stamgast-obrazek { animation: stamgast-ex 1.8s ease-in-out; }
+.stamgast-sucho .stamgast-obrazek { filter: grayscale(0.7) brightness(0.9); animation: stamgast-vzlyk 0.65s ease-in-out 6; }
+.stamgast-rekvizita { position: absolute; bottom: 18%; left: 22%; font-size: 64px; animation: stamgast-zvednout 1.4s ease-in-out 3; }
+.stamgast-panak { font-size: 40px; left: 30%; filter: hue-rotate(60deg) saturate(3); animation: stamgast-zvednout 1.8s ease-in-out; }
+@keyframes stamgast-zvednout { 0%,100% { transform: translateY(40px) rotate(0); } 50% { transform: translateY(-10px) rotate(-35deg); } }
 .stamgast-volby { flex: 1 1 180px; max-width: 320px; min-width: 0; }
 .stamgast-hlaska { min-height: 48px; margin-bottom: 8px; }
-.stamgast-slzy { position: absolute; top: 35%; left: 34%; font-size: 16px; animation: stamgast-slzy 1s ease-in 4; }
-@keyframes stamgast-dousek { 50% { transform: translateY(3px) rotate(-1deg); } }
-@keyframes stamgast-ex { 35%, 70% { transform: translateY(-4px) rotate(-2deg); } }
+.stamgast-slzy { position: absolute; top: 45%; left: 18%; font-size: 18px; letter-spacing: 40px; animation: stamgast-slzy 1s ease-in 4; }
+@keyframes stamgast-dousek { 50% { transform: rotate(-6deg) scale(1.05); } }
+@keyframes stamgast-ex { 40%, 70% { transform: rotate(-12deg) translateY(-6px); } }
 @keyframes stamgast-vzlyk { 50% { transform: translateX(2px); } }
 @keyframes stamgast-slzy { from { transform: translateY(0); opacity: 1; } to { transform: translateY(35px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .stamgast-obrazek, .stamgast-slzy { animation: none !important; }
+  .stamgast-obrazek, .stamgast-slzy, .stamgast-rekvizita { animation: none !important; }
 }
 
 .maggi-layout { display: flex; flex-direction: column; align-items: center; gap: 6px; }

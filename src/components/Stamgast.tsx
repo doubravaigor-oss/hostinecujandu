@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
 import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
-import obrazek from "@/assets/stamgast-igor-sheet.jpg";
+import obrazek from "@/assets/stamgast-igor-foto.jpg";
 
 type Reakce = "ceka" | "pivo" | "zelena" | "sucho";
 
@@ -35,9 +35,11 @@ export function Stamgast() {
       <h2 id="stamgast-nadpis" className="retro-heading">{text.nadpis}</h2>
       <div className="stamgast-layout">
         <div className={`stamgast-scena stamgast-${reakce}`} data-reakce={reakce}>
-          <img src={obrazek} width={1024} height={1024} loading="lazy"
+          <img src={obrazek} width={600} height={600} loading="lazy"
             alt={reakce === "pivo" ? "Štamgast si blaženě vychutnává pivo" : reakce === "zelena" ? "Štamgast exuje panáka zelené" : reakce === "sucho" ? "Štamgast u prázdného stolu pláče" : "Usměvavý štamgast na židli u stolu"}
             className="stamgast-obrazek" />
+          {reakce === "pivo" && <span className="stamgast-rekvizita" aria-hidden="true">🍺</span>}
+          {reakce === "zelena" && <span className="stamgast-rekvizita stamgast-panak" aria-hidden="true">🥃</span>}
           {reakce === "sucho" && <span className="stamgast-slzy" aria-hidden="true">💧 💧</span>}
         </div>
         <div className="stamgast-volby">
