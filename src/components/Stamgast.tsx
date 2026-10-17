@@ -38,9 +38,9 @@ export function Stamgast() {
           <img src={obrazek} width={600} height={600} loading="lazy"
             alt={reakce === "pivo" ? "Štamgast si blaženě vychutnává pivo" : reakce === "zelena" ? "Štamgast exuje panáka zelené" : reakce === "sucho" ? "Štamgast u prázdného stolu pláče" : "Usměvavý štamgast na židli u stolu"}
             className="stamgast-obrazek" />
-          {reakce === "pivo" && <span className="stamgast-rekvizita" aria-hidden="true">🍺</span>}
-          {reakce === "zelena" && <span className="stamgast-rekvizita stamgast-panak" aria-hidden="true">🥃</span>}
-          {reakce === "sucho" && <span className="stamgast-slzy" aria-hidden="true">💧 💧</span>}
+          {reakce === "pivo" && <span className="stamgast-rekvizita" aria-hidden="true" />}
+          {reakce === "zelena" && <span className="stamgast-rekvizita stamgast-panak" aria-hidden="true" />}
+          {reakce === "sucho" && <span className="stamgast-slzy" aria-hidden="true"><i /><i /></span>}
         </div>
         <div className="stamgast-volby">
           <p className="stamgast-hlaska font-bold text-title" role="status" aria-live="polite">{zprava}</p>
