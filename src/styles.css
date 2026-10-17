@@ -201,6 +201,8 @@
 @keyframes stamgast-dousek { 50% { transform: rotate(-3deg) scale(1.07); } }
 @keyframes stamgast-ex { 30% { transform: rotate(-5deg) scale(1.08); } 60% { transform: rotate(3deg) scale(1.05); } }
 @keyframes stamgast-vzlyk { 50% { transform: scale(1.05) translateX(3px); } }
+.stamgast-volby { flex: 1 1 180px; max-width: 320px; min-width: 0; }
+.stamgast-hlaska { min-height: 48px; margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) {
   .stamgast-obrazek, .stamgast-slzy, .stamgast-rekvizita { animation: none !important; }
 }
