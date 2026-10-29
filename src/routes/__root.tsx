@@ -148,6 +148,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Hostinec U Jandů – Nadějkov" },
       { name: "description", content: "Pivnice a tradiční hospodská kuchyně v Nadějkově." },
+      { name: "google-site-verification", content: "PxRogpe7sEUaMod6oa_UVbpCKoURCDXaTgfZXyUBUJ4" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
