@@ -2,18 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { stamgastText as text } from "@/data/hostinec";
 import { zvukPanak, zvukPivo, zvukPlac } from "@/lib/zvuky";
-import obrazekCeka from "@/assets/stamgast-igor-foto.jpg";
-import obrazekPivo from "@/assets/stamgast-pivo.jpg";
-import obrazekZelena from "@/assets/stamgast-zelena.jpg";
-import obrazekSucho from "@/assets/stamgast-sucho.jpg";
+import obrazek from "@/assets/stamgast-neutralni.jpg";
 
 type Reakce = "ceka" | "pivo" | "zelena" | "sucho";
 
-const obrazky: Record<Reakce, { src: string; alt: string }> = {
-  ceka: { src: obrazekCeka, alt: "Usměvavý štamgast na židli u stolu" },
-  pivo: { src: obrazekPivo, alt: "Štamgast si blaženě vychutnává pivo" },
-  zelena: { src: obrazekZelena, alt: "Štamgast exuje panáka zelené" },
-  sucho: { src: obrazekSucho, alt: "Štamgast u prázdného stolu pláče" },
+const popisy: Record<Reakce, string> = {
+  ceka: "Kreslený štamgast se usmívá na židli u stolu",
+  pivo: "Kreslený štamgast si blaženě vychutnává pivo",
+  zelena: "Kreslený štamgast exuje panáka zelené",
+  sucho: "Kreslený štamgast u prázdného stolu pláče",
 };
 
 export function Stamgast() {
@@ -27,6 +24,7 @@ export function Stamgast() {
   }, []);
 
   function pohostit(volba: Exclude<Reakce, "ceka">) {
+    if (pije) return;
     if (casovac.current) clearTimeout(casovac.current);
     setReakce(volba);
     setZprava(volba === "pivo" ? text.pijePivo : volba === "zelena" ? text.pijeZelenou : text.place);
@@ -45,9 +43,10 @@ export function Stamgast() {
       <h2 id="stamgast-nadpis" className="retro-heading">{text.nadpis}</h2>
       <div className="stamgast-layout">
         <div className={`stamgast-scena stamgast-${reakce}`} data-reakce={reakce}>
-          <img key={reakce} src={obrazky[reakce].src} width={600} height={600} loading="lazy"
-            alt={obrazky[reakce].alt}
-            className="stamgast-obrazek" />
+          <div key={reakce} className="stamgast-obrazek">
+            <img src={obrazek} width={1024} height={1024} loading="lazy"
+              alt={popisy[reakce]} className="stamgast-sprite" />
+          </div>
         </div>
         <div className="stamgast-volby">
           <p className="stamgast-hlaska font-bold text-title" role="status" aria-live="polite">{zprava}</p>
