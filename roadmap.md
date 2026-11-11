@@ -1,6 +1,6 @@
 # Co ještě doplnit na web
 
-- [ ] Nahradit skutečného štamgasta neutrální kreslenou postavičkou a ověřit všechny reakce i zvuky.
+- [x] Nahradit skutečného štamgasta neutrální kreslenou postavičkou; pivo, zelená, pláč, zvuky a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
 - [x] Věta o Maggi na přání na Úvodu a u jídelníčku; na Úvodu polévka s otočením lahvičky, volbou kapek, hnědnutím a novou porcí. Ověřeno včetně telefonu.
 
