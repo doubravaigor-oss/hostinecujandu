@@ -4,8 +4,6 @@ import { Box } from "@/components/Layout";
 import { Hodnoceni } from "@/components/Hodnoceni";
 import { StiraciLos } from "@/components/StiraciLos";
 import { Stamgast } from "@/components/Stamgast";
-import { Button } from "@/components/ui/button";
-import { sipkyText } from "@/data/hostinec";
 import { seo } from "@/lib/seo";
 import { aktualityObsah, obsahQuery, textyObsah } from "@/lib/obsah.functions";
 
@@ -25,11 +23,6 @@ function Index() {
 
   return (
     <>
-      <div className="mb-3 flex justify-end">
-        <Button asChild variant="ghost" className="retro-btn rounded-none">
-          <Link to="/hra">{sipkyText.odkaz}</Link>
-        </Button>
-      </div>
       <Box title="Běžný provoz hostince">
         <div className="flex flex-wrap items-start gap-3">
           <div className="min-w-[240px] flex-1">

@@ -1,8 +1,6 @@
 # Co ještě doplnit na web
 
-- [x] Přímý odkaz na šipky z Úvodu; rekord ze tří šipek nad terčem a jeho zachování po obnovení ověřeny na telefonu 11. 11. 2026. Zatím nepublikováno.
-
-- [x] Jednoduché šipky v herně: trojitá dvacítka i střed dávají virtuální pohárek; bodování, nové kolo a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
+- [x] Šipková hra včetně odkazu odstraněna na přání majitele; oznámení „Nadějkovský pohárek“ 21. 11. 2026 v 18:45 na Úvodu a Aktuálně ověřeno 11. 11. 2026. Odstranění hry zatím nepublikováno.
 
 - [x] Nahradit skutečného štamgasta neutrální kreslenou postavičkou; pivo, zelená, pláč, zvuky a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
@@ -20,7 +18,7 @@
 
 - [x] Jídelní lístek: jídla a ceny (doplněno 12. 10. 2026)
 - [x] Pravidelné akce: šipky 301 single out cca 1× za měsíc, třídní srazy, narozeniny, pohřební hostiny, konference (doplněno 12. 10. 2026)
-- [ ] Konkrétní termíny nejbližších šipkových turnajů (čeká na údaje od majitele)
+- [x] Nejbližší šipkový turnaj: Nadějkovský pohárek 21. 11. 2026 v 18:45 (zadáno majitelem 11. 11. 2026).
 - [x] Fotky do galerie – 10 fotek s popisky (doplněno 12. 10. 2026)
 - [x] Nápoje doplněny z PDF (12. 10. 2026)
 - [x] Zkontrolovat web a spustit do sítě – publikováno na https://hostinecujandu.lovable.app, ověřeno 17. 10. 2026

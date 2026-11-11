@@ -174,6 +174,12 @@ export const usporadaneAkce: string[] = [
 
 export const aktuality: { datum: string; nadpis: string; text: string; nove?: boolean }[] = [
   {
+    datum: "21. 11. 2026",
+    nadpis: "Nadějkovský pohárek",
+    text: "21. 11. v 18:45 se koná další Nadějkovský pohárek – turnaj v šipkách.",
+    nove: true,
+  },
+  {
     datum: "",
     nadpis: "Nový web hostince je spuštěn!",
     text: "Vítejte na našich nových stránkách. Brzy zde najdete víkendovou nabídku a termíny dalších akcí.",
@@ -229,25 +235,6 @@ export const hraText = {
   pauza: "PAUZA",
   vyhra: "Všechny cihličky dole. Na zdraví!",
   konec: "Míček utekl. Odveta?",
-};
-
-export const sipkyText = {
-  nadpis: "★ Šipky u Jandů ★",
-  hodit: "Hodit šipku",
-  terc: "Hodit šipku na terč",
-  pripravena: "Tak ukaž, co v tobě je!",
-  vedle: "Vedle! Ještě jeden?",
-  stred: "Přesný střed! Na zdraví!",
-  triple: "Trojitá dvacítka! Na zdraví!",
-  poharek: "Pohárek pro mistra!",
-  poznamka: "Pohárek jen na obrazovce — nic neobjednáváte.",
-  body: "Body",
-  rekord: "Rekord (3 šipky)",
-  odkaz: "🎯 Zahrát si šipky",
-  kolo: "Trojice",
-  znovu: "Další tři!",
-  zvuk: "Zapnout zvuk",
-  ticho: "Vypnout zvuk",
 };
 
 export const stamgastText = {

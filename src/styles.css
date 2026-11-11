@@ -42,10 +42,6 @@
   --game-cyan: #73bed0;
   --stamgast-pozadi: #ffffff;
   --maggi-dochucovadlo: #482013;
-  --dart-wire: #aaa99d;
-  --dart-glass: #e8f7eb;
-  --dart-crosshair: #ffc941;
-  --dart-shadow: 0 8px 18px #10141088;
 }
 
 @layer base {
@@ -238,33 +234,3 @@
   .maggi-proud i { animation: none; top: 20px; }
 }
 
-.sipky-hra { max-width: 520px; margin: auto; }
-.sipky-skore { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; }
-.sipky-skore b { display: block; font-family: monospace; font-size: 22px; color: var(--title); }
-.sipky-scena { position: relative; margin-top: 10px; }
-.sipky-terc { display: block; width: 100%; height: auto; aspect-ratio: 1; padding: 0; border-radius: 0; background: var(--wood) !important; touch-action: manipulation; cursor: crosshair; opacity: 1 !important; }
-.sipky-terc:focus-visible { outline: 3px solid var(--beer); }
-.sipky-terc .sipky-svg { display: block; width: 100%; height: 100%; }
-.sipky-lem, .sipky-tmava { fill: var(--game-screen); }
-.sipky-svetla { fill: var(--game-ink); }
-.sipky-zelena { fill: var(--game-green); }
-.sipky-cervena { fill: var(--game-red); }
-.sipky-svg path, .sipky-svg circle { stroke: var(--dart-wire); stroke-width: 1; }
-.sipky-cislo { fill: var(--game-ink); font: bold 23px Georgia, serif; }
-.sipky-svg .sipky-zamerovac { fill: none; stroke: var(--dart-crosshair); filter: drop-shadow(0 1px 2px var(--game-screen)); }
-.sipky-svg .sipky-zamerovac path, .sipky-svg .sipky-zamerovac circle { stroke: inherit; stroke-width: 2.5; }
-.sipky-zapichnuta path { stroke: var(--game-cyan); stroke-width: 4; }
-.sipky-zapichnuta circle { fill: var(--dart-crosshair); stroke: var(--game-screen); }
-.sipky-letka { fill: var(--game-gold); }
-.sipky-let { animation: sipky-let 300ms ease-in; }
-.sipky-poharek { position: absolute; pointer-events: none; left: 50%; top: 50%; width: 180px; padding: 10px; transform: translate(-50%, -50%); text-align: center; background: var(--paper); color: var(--title); border: 3px ridge var(--wood-light); box-shadow: var(--dart-shadow); animation: sipky-pripitek 500ms ease-out; }
-.sipky-poharek svg { width: 80px; height: 100px; margin: auto; }
-.sipky-sklo { fill: var(--dart-glass); stroke: var(--wood-light); stroke-width: 3; }
-.sipky-napoj { fill: var(--game-green); }
-.sipky-odlesk { fill: none; stroke: var(--stamgast-pozadi); stroke-width: 5; }
-.sipky-vysledek { min-height: 44px; display: flex; justify-content: center; align-items: center; text-align: center; font-weight: bold; color: var(--title); }
-.sipky-hody { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; text-align: center; font-family: monospace; }
-.sipky-hody span { border: 2px inset var(--wood-light); background: var(--paper); padding: 5px; }
-@keyframes sipky-let { from { opacity: 0.2; } to { opacity: 1; } }
-@keyframes sipky-pripitek { from { opacity: 0; transform: translate(-50%, -30%) scale(.4) rotate(-14deg); } to { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); } }
-@media (prefers-reduced-motion: reduce) { .sipky-poharek, .sipky-let { animation: none; } }

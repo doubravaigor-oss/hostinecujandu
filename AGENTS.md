@@ -9,7 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 - All editable site content lives in src/data/hostinec.ts — owner updates via chat, one place to change.
-- Standalone games live on /hra; initialize animation client-side, use Matter.js for physics games, and keep SVG dartboard hit scoring in a pure tested module so drawing and scores agree.
+- Standalone games live on /hra; initialize animation client-side and use Matter.js for physics games to keep physics consistent.
 - Public menus omit empty categories so unfinished admin entries never appear as offers.
 - The homepage pub regular uses an isolated client-side reaction component with a shared illustration sprite sheet and cleaned-up timers; it must never create real orders or payments.
 - The soup toy keeps drops and animation local to an isolated component rendered in the shared sidebar; kitchen guest preferences stay separate from database-overridden cooking copy.
