@@ -231,6 +231,24 @@ export const hraText = {
   konec: "Míček utekl. Odveta?",
 };
 
+export const sipkyText = {
+  nadpis: "★ Šipky u Jandů ★",
+  hodit: "Hodit šipku",
+  terc: "Hodit šipku na terč",
+  pripravena: "Tak ukaž, co v tobě je!",
+  vedle: "Vedle! Ještě jeden?",
+  stred: "Přesný střed! Na zdraví!",
+  triple: "Trojitá dvacítka! Na zdraví!",
+  poharek: "Pohárek pro mistra!",
+  poznamka: "Pohárek jen na obrazovce — nic neobjednáváte.",
+  body: "Body",
+  rekord: "Nejlepší trojice",
+  kolo: "Trojice",
+  znovu: "Další tři!",
+  zvuk: "Zapnout zvuk",
+  ticho: "Vypnout zvuk",
+};
+
 export const stamgastText = {
   nadpis: "★ Náš štamgast ★",
   pivo: "🍺 Kup mu pivo",
