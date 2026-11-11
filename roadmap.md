@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [ ] Přímý odkaz na šipky z Úvodu a ověření nejlepšího skóre po opětovném otevření hry.
+
 - [x] Jednoduché šipky v herně: trojitá dvacítka i střed dávají virtuální pohárek; bodování, nové kolo a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
 - [x] Nahradit skutečného štamgasta neutrální kreslenou postavičkou; pivo, zelená, pláč, zvuky a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
