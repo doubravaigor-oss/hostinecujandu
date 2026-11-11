@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [x] Jednoduché šipky v herně: trojitá dvacítka i střed dávají virtuální pohárek; bodování, nové kolo a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
+
 - [x] Nahradit skutečného štamgasta neutrální kreslenou postavičkou; pivo, zelená, pláč, zvuky a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
 - [x] Věta o Maggi na přání na Úvodu a u jídelníčku; na Úvodu polévka s otočením lahvičky, volbou kapek, hnědnutím a novou porcí. Ověřeno včetně telefonu.
