@@ -3,7 +3,7 @@ import { RotateCcw, Volume2, VolumeX, Crosshair } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { sipkyText as text } from "@/data/hostinec";
 import { SEKTORY, TERC, bodNaTerci, vyhodnotHod, vysec } from "@/lib/sipky";
-import { zvukZastaveni, zvukVyhra } from "@/lib/zvuky";
+import { zvukCvak, zvukZastaveni, zvukVyhra } from "@/lib/zvuky";
 
 type Hod = ReturnType<typeof vyhodnotHod> & { x: number; y: number };
 
@@ -41,6 +41,7 @@ export function Sipky() {
     zamceno.current = true;
     setLeti(true);
     setPoharek(false);
+    if (zvuk) zvukCvak();
     const { x, y } = cil.current;
     const hod = { ...vyhodnotHod(x, y), x, y };
     casovac.current = setTimeout(() => {
@@ -74,6 +75,14 @@ export function Sipky() {
       </div>
       <div className="sipky-scena">
         <Button variant="ghost" className="sipky-terc" aria-label={text.terc} disabled={leti || hody.length === 3} onClick={hodit}
+          onPointerDown={(e) => {
+            if (e.pointerType !== "touch" || zamceno.current) return;
+            const rect = e.currentTarget.getBoundingClientRect();
+            const bod = { x: (e.clientX - rect.left) / rect.width * 480, y: (e.clientY - rect.top) / rect.height * 480 };
+            zaklad.current = bod;
+            cil.current = bod;
+            setMiri(bod);
+          }}
           onPointerMove={(e) => {
             if (zamceno.current) return;
             const rect = e.currentTarget.getBoundingClientRect();

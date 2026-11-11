@@ -14,7 +14,7 @@ export function vyhodnotHod(x: number, y: number) {
   return { body: sektor * nasobek, popis: `${nasobek > 1 ? `${nasobek} × ` : ""}${sektor}`, poharek: sektor === 20 && nasobek === 3 };
 }
 
-export function bodNaTerci(r: number, stupne: number) {
+export function bodNaTerci(r: number, stupne: number): [number, number] {
   const rad = stupne * Math.PI / 180;
   return [TERC.stred + r * Math.sin(rad), TERC.stred - r * Math.cos(rad)];
 }
