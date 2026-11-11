@@ -12,7 +12,7 @@ it("rekord ze tří šipek přežije otevření hry a horší skóre ho nepřep�
   vi.stubGlobal("cancelAnimationFrame", vi.fn());
   const prvni = render(<Sipky />);
   for (let i = 0; i < 3; i++) {
-    fireEvent.click(screen.getByRole("button", { name: "Hodit šipku", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: /^Hodit šipku$/ }));
     act(() => { vi.advanceTimersByTime(300); });
   }
   expect(localStorage.getItem("jandu-sipky-rekord")).toBe("60");
@@ -25,7 +25,7 @@ it("rekord ze tří šipek přežije otevření hry a horší skóre ho nepřep�
     const event = new Event("pointerdown", { bubbles: true });
     Object.assign(event, { pointerType: "touch", clientX: 240, clientY: 10 });
     fireEvent(terc, event);
-    fireEvent.click(screen.getByRole("button", { name: "Hodit šipku", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: /^Hodit šipku$/ }));
     act(() => { vi.advanceTimersByTime(300); });
   }
   expect(dalsi.container.querySelector(".sipky-skore span:first-child b")?.textContent).toBe("0");
