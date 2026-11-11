@@ -1,5 +1,7 @@
 # Co ještě doplnit na web
 
+- [ ] Nahradit skutečného štamgasta neutrální kreslenou postavičkou a ověřit všechny reakce i zvuky.
+
 - [x] Věta o Maggi na přání na Úvodu a u jídelníčku; na Úvodu polévka s otočením lahvičky, volbou kapek, hnědnutím a novou porcí. Ověřeno včetně telefonu.
 
 - [x] Polévková hra přesunuta do postranního sloupce pod automat (je tedy na každé stránce, na telefonu až dolů); texty o vaření zklidněny bez velkých řečí o čerstvosti. Ověřeno 16. 10. 2026.
