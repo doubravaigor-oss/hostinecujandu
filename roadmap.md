@@ -1,6 +1,6 @@
 # Co ještě doplnit na web
 
-- [ ] Přidat jednoduché šipky do herny; za trojitou dvacítku a střed virtuální pohárek, ověřit hody i telefon.
+- [x] Jednoduché šipky v herně: trojitá dvacítka i střed dávají virtuální pohárek; bodování, nové kolo a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
 - [x] Nahradit skutečného štamgasta neutrální kreslenou postavičkou; pivo, zelená, pláč, zvuky a telefon ověřeny 11. 11. 2026. Zatím nepublikováno.
 
